@@ -1,2 +1,21 @@
+@import "fonts";
+@import "vars";
+@import "normalize";
+@import "base";
+@import "typography";
+@import "write_me_btn";
+
+// page components
 @import "header";
+// index
+@import "hero_section";
+@import "about_section";
+
+// projects
+@import "project_list";
+@import "project_intro";
+@import "footer";
+@import "media";
+
+
 

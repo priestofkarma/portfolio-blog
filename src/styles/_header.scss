@@ -1,3 +1,207 @@
-body {
-  // background-color: aliceblue;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1em;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.72);
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 1000;
+  a {
+    text-decoration: none;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+}
+
+.header.scrolled .header-wrapper {
+  height: 90px;
+}
+
+.logotype {
+  display: block;
+  color: #000;
+  position: absolute;
+  left: 0;
+  width: 45px;
+  padding: 0;
+  transition: transform 0.1s ease-in;
+  img {
+    width: 100%;
+    display: block;
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+.header-wrapper {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  transition: 0.5s ease;
+  /* opacity: 0;
+    -webkit-transform: translate3d(0, -30%, 0);
+    transform: translate3d(0, -30%, 0);
+    -webkit-animation: fadeInDown 0.7s ease;
+    animation: fadeInDown 0.7s ease;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s; */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  a {
+    display: inline-block;
+    &:hover,
+    &:focus {
+      color: var(--azure);
+    }
+  }
+}
+
+.header-menu {
+  a {
+    padding: 4px 10px;
+  }
+  ul {
+    padding: 0;
+    // margin: 0 10px;
+    li {
+      display: inline;
+      /* margin: 0 10px; */
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  position: absolute;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  background-color: #e3effe;
+  border-radius: 8px;
+}
+
+.menu-toggle:active {
+  background-color: #d9e9fe;
+}
+.menu-toggle-icon {
+  span,
+  span:after,
+  span:before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 3px;
+    transition: all 0.12s;
+    background: var(--azure);
+    border-radius: 4px;
+  }
+}
+.menu-toggle-icon span:before {
+  position: absolute;
+  top: -6px;
+}
+.menu-toggle-icon span:after {
+  position: absolute;
+  bottom: -6px;
+}
+
+.toggle-active.menu-toggle .menu-toggle-icon span {
+  background-color: transparent;
+}
+.toggle-active.menu-toggle .menu-toggle-icon span:before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.toggle-active.menu-toggle .menu-toggle-icon span:after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.header-menu.toggle-active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.25s ease;
+  ul {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .header {
+    font-size: 1.2rem;
+  }
+  .menu-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow-y: auto;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    visibility: hidden;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    opacity: 0;
+    ul {
+      padding: 100px 0;
+      // font-size: 24px;
+      position: relative;
+      top: 10px;
+      -webkit-transition: top 0.5s ease;
+      -o-transition: top 0.5s ease;
+      transition: top 0.5s ease;
+      li {
+        margin: 10px 0;
+        display: block;
+      }
+    }
+  }
 }

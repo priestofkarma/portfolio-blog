@@ -1,0 +1,96 @@
+/* ------------------------------------------------------------------ */
+/* i. Footer styles.
+/* ------------------------------------------------------------------ */
+.footer {
+  padding: var(--section-space) 0;
+  color: #ffffff;
+  // background: linear-gradient(0deg, #334155 0%, #334155 100%);
+  background: linear-gradient(to bottom, #4b5866 0%, #29323c 100%);
+  a {
+    color: #ffffff;
+  }
+  &-menu {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    column-gap: var(--gap);
+    row-gap: var(--gap);
+    padding-bottom: var(--gap);
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-menu-item {
+    .first-link {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.footer-menu-list {
+  padding: 0;
+  list-style: none;
+  a {
+    font-weight: 300;
+    color: var(--colors-gray-300);
+  }
+  li {
+    padding: 4px 0;
+  }
+}
+
+.footer-copyright {
+  text-align: right;
+  max-width: 100%;
+  font-weight: 300;
+  font-size: 0.8em;
+  display: grid;
+  grid-template-columns: auto 420px;
+  column-gap: var(--gap);
+  row-gap: var(--gap);
+  justify-content: space-between;
+  align-items: end;
+  span {
+    text-align: left;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: var(--azure);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-meta {
+    display: block;
+  }
+  .footer-copyright {
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .footer {
+    &-menu {
+      grid-template-columns: 1fr;
+    }
+    &-menu-list {
+      display: flex;
+      margin-left: -10px;
+      li {
+        padding: 10px;
+      }
+    }
+  }
+}

@@ -1,112 +1,78 @@
-import * as React from "react"
-import "../styles/main.scss"
+import * as React from 'react'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
+import { StaticImage } from "gatsby-plugin-image"
+import ProjectsList from '../components/ProjectsList'
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
 
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main >
-      <title>Home Page</title>
-      <h1 >
-        Congratulations
-        <br />
-        <span >— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p >
-        Edit <code >src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul>
-        <li >
-          <a
-            
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url}>
-            <span>
-              <a
-               
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p></p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
+    <Layout>
+
+      <Seo pageTitle="Женя Петренко" />
+
+      <section className="hero-section">
+        <div className="hero-image"></div>
+        <div className="wrapper">
+          <div className="hero-section_wrapper">
+            <h1 className="hero-title">Привет, я Женя 👋</h1>
+            <div className="hero-description">
+              <p><b>Веб-разработчик</b> с двухлетним стажем, в основном работаю в аутсорсе.
+
+                <b> Верстаю сайты</b> и натягиваю на <b>Wordpress</b> :)
+              </p>
+              <p>В настоящее время доступен для найма,
+                не стесняйтесь связаться со мной,
+                чтобы обсудить детали Вашего проекта.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section className="about-section">
+        <div className="wrapper">
+          <div className="about-section_wrapper">
+            <div className="about-section_image">
+              <StaticImage
+                loading="lazy"
+                layout="fullWidth"
+                src="../images/me.jpg"
+                alt="It`s me :)"
+              />
+
+            </div>
+            <div className="about-section_text">
+              <h4>Мои услуги включают в себя:</h4>
+              <ul>
+                <li>Вёрстка сайтов
+                  <ul>
+                    <li>на Tilda, лендинги на <a href="https://zero.tilda.cc/ru" target="_blank">Zero
+                      Block</a></li>
+                    <li>интеграция вёрстки в <a href="https://getcourse.ru/" target="_blank">GetCourse</a></li>
+                  </ul>
+                </li>
+                <li>Натяжка сайта на CMS <a href="https://wordpress.org" target="_blank">WordPress</a></li>
+              </ul>
+              <h4>Я работаю с такими технологиями:</h4>
+              <ul>
+                <li>HTML/CSS, SASS/SCSS, grid/flexbox</li>
+                {/* <li>Bootstrap 4</li> */}
+                <li>JavaScript, jQuery и плагины к нему</li>
+                <li>Tilda, WordPress, React, Gatsby, GetCourse</li>
+                <li>Adobe Photoshop, Figma, Avocode</li>
+                <li>Изучаю React, Gatsby</li>
+              </ul>
+              <p>Моя почасовая ставка 120 грн. В зависимости от вида, объема и сложности работы, цена может изменятся.</p>
+            </div>
+          </div>
+          <ProjectsList title="Последние проекты" />
+
+        </div>
+      </section>
+
+    </Layout>
   )
 }
 
