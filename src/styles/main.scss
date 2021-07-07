@@ -1,12 +1,16 @@
-@import "fonts";
-@import "vars";
-@import "normalize";
-@import "base";
-@import "typography";
-@import "write_me_btn";
+@import "./utils/fonts";
+@import "./utils/vars";
+@import "./utils/normalize";
+@import "./utils/base";
+@import "./utils/typography";
+@import "./utils/link";
+@import "./utils/list";
+@import "./utils/table";
+@import "./utils/button";
 
 // page components
 @import "header";
+
 // index
 @import "hero_section";
 @import "about_section";
@@ -14,8 +18,9 @@
 // projects
 @import "project_list";
 @import "project_intro";
+
+// footer
 @import "footer";
+
+// media
 @import "media";
-
-
-

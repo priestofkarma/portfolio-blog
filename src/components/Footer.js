@@ -1,21 +1,21 @@
 import React from 'react'
 import { footerMenuItems } from '../components/MenuItems'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
-const data = graphql`
-    query {
-      site {
-        siteMetadata {
-          description
-          title
-        }
-      }
-    }
-  `
+// const data = graphql`
+//     query {
+//       site {
+//         siteMetadata {
+//           description
+//           title
+//         }
+//       }
+//     }
+//   `
 
 const Footer = () => {
 
-  const { site } = useStaticQuery(data)
+  // const { site } = useStaticQuery(data)
 
   // const {
   //   title,
@@ -34,7 +34,7 @@ const Footer = () => {
                   <ul className="footer-menu-list">
                     {item.externalLinks.map((extItem, extIndex) => (
                       <li key={`footerMenuLi${extIndex + 1000}`}>
-                        <Link to={extItem.path} target={extItem.target}>{extItem.title}</Link>
+                        <Link to={extItem.path} target={extItem.target} >{extItem.title}</Link>
                       </li>
                     ))}
                   </ul>
@@ -44,7 +44,7 @@ const Footer = () => {
           )}
 
           <div className="footer-copyright">
-            <span>© 2021 by <a href="https://t.me/priestofkarma" target="_blank">Zhenya Petrenko</a> Все права защищены.</span>
+            <span>© 2021 by <a href="https://t.me/priestofkarma" target="_blank" rel="noreferrer">Zhenya Petrenko</a> Все права защищены.</span>
             <p>В настоящее время доступен для найма, не стесняйтесь связаться со мной, чтобы обсудить
               детали
               Вашего проекта.</p>

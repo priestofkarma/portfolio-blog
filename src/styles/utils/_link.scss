@@ -1,0 +1,12 @@
+a {
+  -webkit-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
+  transition: 0.25s ease;
+  color: var(--black);
+  -webkit-tap-highlight-color: transparent;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: var(--azure);
+  }
+}

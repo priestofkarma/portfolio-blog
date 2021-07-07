@@ -10,6 +10,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             slug
+            frontmatter {
+              path
+            }
           }
         }
       }
@@ -24,7 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const singleProjectTemplate = path.resolve(`./src/templates/single-project.js`);
   posts.forEach(({ node }, index) => {
     createPage({
-      path: `${node.slug}`,
+      path: `${node.frontmatter.path}`,
       component: singleProjectTemplate,
       context: { id: node.id },
     })

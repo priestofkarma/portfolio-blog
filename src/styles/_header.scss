@@ -100,23 +100,27 @@
   height: 40px;
   top: 50%;
   right: 0;
+  padding: 0;
   align-items: center;
   justify-content: center;
   transform: translate(0, -50%);
   cursor: pointer;
   background-color: #e3effe;
   border-radius: 8px;
+  &:focus {
+    background-color: #d9e9fe;
+  }
+  &:hover {
+    background-color: #d9e9fe;
+  }
 }
 
-.menu-toggle:active {
-  background-color: #d9e9fe;
-}
 .menu-toggle-icon {
   span,
-  span:after,
-  span:before {
-    content: "";
+  span:before,
+  span:after {
     position: relative;
+    content: "";
     display: block;
     width: 18px;
     height: 3px;
@@ -124,27 +128,32 @@
     background: var(--azure);
     border-radius: 4px;
   }
-}
-.menu-toggle-icon span:before {
-  position: absolute;
-  top: -6px;
-}
-.menu-toggle-icon span:after {
-  position: absolute;
-  bottom: -6px;
+  span:before {
+    position: absolute;
+    top: -6px;
+  }
+  span:after {
+    position: absolute;
+    bottom: -6px;
+  }
 }
 
-.toggle-active.menu-toggle .menu-toggle-icon span {
-  background-color: transparent;
+.toggle-active.menu-toggle {
+  .menu-toggle-icon {
+    span {
+      background-color: transparent;
+      &:before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
 }
-.toggle-active.menu-toggle .menu-toggle-icon span:before {
-  transform: rotate(45deg);
-  top: 0;
-}
-.toggle-active.menu-toggle .menu-toggle-icon span:after {
-  transform: rotate(-45deg);
-  top: 0;
-}
+
 .header-menu.toggle-active {
   visibility: visible;
   opacity: 1;

@@ -12,6 +12,7 @@
     left: 0;
     right: 0;
     background: url("../images/endless-clouds.svg");
+    background-size: 50px;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -32,8 +33,13 @@
 
 .hero-title {
   font-weight: 900;
-  font-size: 3rem;
-  // width: 570px;
+  font-size: calc(var(--h1-font-size) + 0.5rem);
+  margin-bottom: 0;
+  span {
+    transform-origin: bottom right;
+    display: inline-block;
+    animation: 1s helloHand 0s ease infinite alternate;
+  }
   // opacity: 0;
   // -webkit-transform: translate3d(30%, 0, 0);
   // transform: translate3d(30%, 0, 0);
@@ -44,11 +50,22 @@
   // -webkit-animation-fill-mode: both;
   // animation-fill-mode: both;
 }
+@keyframes helloHand {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(10deg) translate3d(0, -7px, 0);
+  }
 
+  100% {
+    transform: rotate(-10deg);
+  }
+}
 .hero-description {
-  font-size: 1.135em;
+  font-size: 1.24em;
   font-weight: 300;
-  max-width: 50ch;
+  max-width: 54ch;
   margin: 0 auto;
   b {
     font-weight: 400;
@@ -64,12 +81,11 @@
   // animation-fill-mode: both;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .hero-title {
     font-size: var(--h1-font-size);
   }
   .hero-description {
-    font-size: 1rem;
+    font-size: 1em;
   }
 }
-

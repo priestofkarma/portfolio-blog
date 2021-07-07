@@ -7,15 +7,12 @@
 }
 @media only screen and (max-width: 992px) {
   :root {
-    --h1-font-size: 2.1em;
+    --h1-font-size: 2.3em;
     --h2-font-size: 1.7em;
     --h3-font-size: 1.5em;
-    --h4-font-size: 1.23em;
+    --h4-font-size: 1.21em;
     --h5-font-size: 1.13em;
     --h6-font-size: 1em;
-  }
-  .pr-hero-section {
-    padding-bottom: 0;
   }
 }
 
@@ -29,43 +26,6 @@
   }
   body {
     font-size: 100%;
-  }
-
-  .portfolio-item-title a {
-    font-size: 18px;
-  }
-  .portfolio-item-subtitle {
-    font-size: 18px;
-  }
-  .portfolio-item-meta {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-    padding-bottom: 30px;
-    margin-bottom: 60px;
-  }
-  .scroll-up {
-    right: 20px;
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-  }
-  /* projects page */
-  .new-project__image:before {
-    width: 46px;
-    height: 46px;
-    font-size: 10px;
-    top: -23px;
-    right: 10px;
-  }
-  .single-project:last-of-type {
-    border-bottom: 2px solid #333;
-  }
-  /* open project page */
-  .hero-project-wrapper h1 {
-    font-size: 32px;
-  }
-  .project-content .content-slider .owl-stage-outer {
-    overflow: visible;
   }
 }
 
@@ -88,6 +48,9 @@
 }
 
 @media only screen and (max-width: 340px) {
+  body {
+    font-size: 14px;
+  }
   :root {
     --h1-font-size: 1.6rem;
   }

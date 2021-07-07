@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import rndColors from "../utils/randomColor"
 
 const ProjectsListItem = ({ index, nodeObj }) => {
 
@@ -8,15 +9,15 @@ const ProjectsListItem = ({ index, nodeObj }) => {
   const {
     frontmatter: { title, description, path, tags, featuredImageAlt, featuredImage },
   } = nodeObj
-  console.log(tags);
+
   const image = getImage(featuredImage)
 
   return (
     <li>
       <Link to={path} className="list-item project-list_item">
         <div className="project-list_tag-list">
-          {tags.map((tag, ind) => (
-            <span className="project-list_tag" key={`project-tag${ind}`}>{tag}</span>
+          {tags.map((tag, i) => (
+            <span className={`project-list_tag" ${rndColors.getRndColor(tag)}`} key={`project-tag${i}`}>{tag}</span>
           ))}
         </div>
         <GatsbyImage

@@ -23,6 +23,20 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
@@ -34,17 +48,17 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "projects",
-        path: "./src/projects/",
+        path: "./src/content/projects/",
       },
       __key: "projects",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "blog",
+        path: "./src/content/blog/",
       },
-      __key: "pages",
+      __key: "blog",
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -63,6 +77,7 @@ module.exports = {
         // Any invalid keyword or empty string defaults to `anonymous`
         crossOrigin: `use-credentials`,
       },
-    }
+    },
+    `gatsby-plugin-offline`,
   ],
 };
