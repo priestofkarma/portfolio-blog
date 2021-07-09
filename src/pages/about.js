@@ -1,10 +1,21 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
+import Seo from '../components/Seo'
+import PageIntro from '../components/PageIntro'
 
 const AboutPage = () => {
+
+  const pageData = {
+    title: "Обо мне",
+    // description: "Мои наблюдения, зметочки и кое-что еще 🙃",
+  }
   return (
-    <Layout pageTitle="About Me">
-      <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
+    <Layout pageTitle={pageData.title}>
+      <Seo pageTitle="Обо мне" pageDescription={pageData.title} />
+      <PageIntro
+        pageTitle={pageData.title}
+        text={pageData.description}
+      ></PageIntro>
     </Layout>
   )
 }

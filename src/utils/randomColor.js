@@ -19,6 +19,4 @@ const rndColors = {
   }
 }
 
-
-
 export default rndColors

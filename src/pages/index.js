@@ -41,7 +41,6 @@ const IndexPage = () => {
         <div className="wrapper">
           <div className="hero-section_wrapper">
             <h1 className="hero-title">Привет, я Женя <span>👋</span></h1>
-            {/* <h1 className="hero-title">Привет, я Женя 👋</h1> */}
             <div className="hero-description">
               <p><b>Веб-разработчик</b> с двухлетним стажем, в основном работаю в аутсорсе.
                 <b> Верстаю сайты</b> и натягиваю на <b>Wordpress</b> :)
