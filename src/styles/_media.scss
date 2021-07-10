@@ -23,6 +23,14 @@
     --wrapper: 520px;
     // sizes
     --section-space: 50px;
+    --cardHeight: 170px;
+    // font sizes
+    --h1-font-size: 1.9rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.16rem;
+    --h4-font-size: 1.1rem;
+    --h5-font-size: 1rem;
+    --h6-font-size: 1rem;
   }
   body {
     font-size: 100%;
@@ -31,9 +39,12 @@
 
 @media only screen and (max-width: 576px) {
   :root {
-    --h1-font-size: 1.9rem;
-    --h5-font-size: 1rem;
-    --h6-font-size: 1rem;
+    // --h1-font-size: 1.9rem;
+    // --h2-font-size: 1.5rem;
+    // --h3-font-size: 1.16rem;
+    // --h4-font-size: 1.1rem;
+    // --h5-font-size: 1rem;
+    // --h6-font-size: 1rem;
   }
 }
 

@@ -16,7 +16,7 @@ const ProjectsListItem = ({ index, nodeObj }) => {
     <li>
       <Link to={path} className="list-item project-list_item">
         <div className="project-list_tag-list">
-          {tags.map((tag, i) => (
+          {tags && tags.map((tag, i) => (
             <span className={`project-list_tag" ${rndColors.getRndColor(tag)}`} key={`project-tag${i}`}>{tag}</span>
           ))}
         </div>

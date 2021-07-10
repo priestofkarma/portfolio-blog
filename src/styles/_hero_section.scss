@@ -3,7 +3,22 @@
   text-align: center;
   margin: 0 auto;
   position: relative;
+  background: url("../images/endless-clouds.svg");
+  background-size: 50px;
+  &:after {
+    content: "";
+    background: -o-linear-gradient(bottom, #fff 0, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 100%);
+    display: block;
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
   .wrapper {
+    z-index: 1;
     margin: auto;
   }
   .hero-image {

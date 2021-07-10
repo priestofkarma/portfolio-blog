@@ -25,7 +25,7 @@ const Header = () => {
           <nav className={`header-menu ${isOpen ? "toggle-active" : ""}`}>
             <ul>
               <li><Link to="/projects" onClick={toggleNav}>Проекты</Link></li>
-              <li><Link to="/blog" onClick={toggleNav}>Блог</Link></li>
+              <li><Link to="/notes" onClick={toggleNav}>Заметочки</Link></li>
               <li><Link to="/about" onClick={toggleNav}>Обо мне</Link></li>
             </ul>
           </nav>

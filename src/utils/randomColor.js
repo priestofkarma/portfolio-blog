@@ -12,6 +12,7 @@
 //   }
 // }
 
+
 const rndColors = {
   colors: ["azure-light", "indigo-light", "pink-light", "green-light"],
   getRndColor: function () {

@@ -3,22 +3,10 @@ import { socialMenuItems } from '../utils/MenuItems'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import sliceString from '../utils/sliceString'
 // import kebabCase from "lodash/kebabCase"
-
 const _ = require("lodash")
 
-// const data = graphql`
-//     query {
-//       site {
-//         siteMetadata {
-//           description
-//           title
-//         }
-//       }
-//     }
-//   `
-
-
 const Footer = () => {
+
   // const {
   //   title,
   //   description,
@@ -111,7 +99,7 @@ const lastThreePosts = graphql`
       }
     }
     allBlogMdx: allMdx(
-      filter: {fileAbsolutePath: {regex: "/content/blog/"}}
+      filter: {fileAbsolutePath: {regex: "/content/notes/"}}
       limit: 5
       sort: {order: DESC, fields: frontmatter___date}
     ) {

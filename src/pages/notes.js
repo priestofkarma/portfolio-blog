@@ -2,34 +2,43 @@ import * as React from 'react'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
 import PageIntro from '../components/PageIntro'
+import NotesList from '../components/NotesList'
+import TagList from '../components/TagList'
 
 const blogPostsQuery = graphql`
  query {
-  allMdx(filter: {fileAbsolutePath: {regex: "/content/blog/"}}) {
-    edges {
-      node {
-        id
-        slug
-        frontmatter {
-          title
-          description
-          path
+    allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}) {
+      edges {
+        node {
+          id
+          slug
+          frontmatter {
+            description
+            path
+            tags
+            title
+          }
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
-}
 `
 
 const BlogPage = () => {
 
   const posts = useStaticQuery(blogPostsQuery)
+
+  const tags = posts.allMdx.group
+
   const pageData = {
-    title: "Статейки и закладочки",
+    title: "Заметочки и закладочки",
     // title: "Головные мюсли 🧠",
-    description: "Мои наблюдения, зметочки и кое-что еще 🙃",
+    description: "Мои зметочки и кое-что еще 🙃",
     // description: "О чем-то пишу, о чем-то не пишу 🤷‍♂️",
   }
 
@@ -44,15 +53,8 @@ const BlogPage = () => {
 
       <section className="blog-section">
         <div className="wrapper">
-          <ul>
-            {posts.allMdx.edges.map(({ node }, index) => (
-              <li key={`blog-post-index-${index}`}>
-                <Link to={node.frontmatter.path}>
-                  {node.frontmatter.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <TagList query={tags} />
+          <NotesList query={posts.allMdx} />
         </div>
       </section>
     </Layout>

@@ -4,10 +4,11 @@ import Seo from '../components/Seo'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
 import ProjectsList from '../components/ProjectsList'
+import NotesList from '../components/NotesList'
 
 const projectsQuery = graphql`
-  query ($limitPages: Int = 2) {
-    allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}},  limit: $limitPages) {
+  query ($limitProj: Int = 2, $limitBlog: Int = 3) {
+    projectsQuery: allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}},  limit: $limitProj, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           id
@@ -15,7 +16,6 @@ const projectsQuery = graphql`
           frontmatter {
             description
             path
-            tags
             title
             featuredImageAlt
             featuredImage {
@@ -27,17 +27,32 @@ const projectsQuery = graphql`
         }
       }
     }
-  } `
+    blogQuery: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}},  limit: $limitBlog) {
+      edges {
+        node {
+          id
+          slug
+          frontmatter {
+            description
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+  `
 
 const IndexPage = () => {
 
   const projects = useStaticQuery(projectsQuery)
+  // const written = useStaticQuery(blogQuery)
 
   return (
     <Layout>
       <Seo pageTitle="Женя Петренко" />
       <section className="hero-section">
-        <div className="hero-image"></div>
+        {/*<div className="hero-image"></div>*/}
         <div className="wrapper">
           <div className="hero-section_wrapper">
             <h1 className="hero-title">Привет, я Женя <span>👋</span></h1>
@@ -74,7 +89,7 @@ const IndexPage = () => {
                     <li>интеграция вёрстки в <a href="https://getcourse.ru/" target="_blank" rel="noreferrer">GetCourse</a></li>
                   </ul>
                 </li>
-                <li>Натяжка сайта на CMS <a href="https://wordpress.org" target="_blank" rel="noreferrer">WordPress</a></li>
+                <li>Натяжка вёрстки на CMS <a href="https://wordpress.org" target="_blank" rel="noreferrer">WordPress</a></li>
               </ul>
               <h4>Я работаю с такими технологиями:</h4>
               <ul>
@@ -88,7 +103,10 @@ const IndexPage = () => {
               <p>Моя почасовая ставка 120 грн. В зависимости от вида, объема и сложности работы, цена может изменятся.</p>
             </div>
           </div>
-          <ProjectsList title="Последние работы" query={projects} />
+
+          <ProjectsList title="Последние работы" query={projects.projectsQuery} />
+
+          <NotesList title="Последние записи" query={projects.blogQuery} />
 
         </div>
       </section>

@@ -4,10 +4,9 @@ const _ = require("lodash")
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // объеденить запросы
-  const queryProject = await graphql(`
+  const queryPages = await graphql(`
     query {
-      allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}) {
+      queryProject: allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}) {
         edges {
           node {
             id
@@ -18,12 +17,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    }
-  `)
-
-  const queryBlogPosts = await graphql(`
-    query {
-      allMdx(filter: {fileAbsolutePath: {regex: "/content/blog/"}}) {
+      queryNotes: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}) {
         edges {
           node {
             id
@@ -34,37 +28,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    }
-  `)
-
-  // filter: {fileAbsolutePath: {regex: "/content/projects/"}}
-  const projectTags = await graphql(`
-    {
-      allMdx(
-        sort: {fields: frontmatter___date, order: DESC}
-      ) {
+      projectTags: allMdx(sort: {fields: frontmatter___date, order: DESC}) {
         group(field: frontmatter___tags) {
           fieldValue
           totalCount
         }
       }
+
+
     }
   `)
 
   // handle errors
-  if (queryProject.errors) {
+  if (queryPages.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
 
-  if (queryBlogPosts.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
-  }
-
-  if (projectTags.errors) {
-    reporter.panicOnBuild(`🚨  ERROR: Loading "createPages" query`)
-  }
-
-  const projects = queryProject.data.allMdx.edges
+  const projects = queryPages.data.queryProject.edges
   const singleProjectTemplate = path.resolve(`./src/templates/single-project.js`);
   projects.forEach(({ node }, index) => {
     createPage({
@@ -74,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  const posts = queryBlogPosts.data.allMdx.edges
+  const posts = queryPages.data.queryNotes.edges
   const singlePostTemplate = path.resolve(`./src/templates/single-post.js`);
   posts.forEach(({ node }, index) => {
     createPage({
@@ -84,7 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  const tags = projectTags.data.allMdx.group
+  const tags = queryPages.data.projectTags.group
   const tagTemplate = path.resolve(`./src/templates/project-tags.js`);
 
   tags.forEach(node => {

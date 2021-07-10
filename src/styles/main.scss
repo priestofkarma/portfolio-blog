@@ -8,6 +8,9 @@
 @import "./utils/list";
 @import "./utils/table";
 @import "./utils/button";
+@import "./section_caption";
+@import "./utils/card_gradient";
+@import "./tag_list";
 
 // page components
 @import "header";
@@ -19,6 +22,9 @@
 // projects
 @import "project_list";
 @import "project_intro";
+
+// blog
+@import "blog_list";
 
 // footer
 @import "footer";

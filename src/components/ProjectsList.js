@@ -1,26 +1,23 @@
 import React from 'react'
 import ProjectsListItem from './ProjectsListItem'
-import { Link } from 'gatsby'
+import SectionCaption from '../components/SectionCaption'
 
-const ProjectsList = ({ title, query }) => {
+const ProjectsList = ({ title, query, tagNameFilter }) => {
 
   return (
     <div className="project-list">
-      {title && (
-        <div className="project-list_caption">
-          <h2 >{title}</h2>
-          <Link to="/projects">
-            Все проекты
-            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z" clipRule="evenodd"></path><path fillRule="evenodd" d="M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z" clipRule="evenodd"></path></svg>
-          </Link>
-        </div>
-      )}
+      {title && <SectionCaption title={title} linkTo="/projects" linkText="Все проекты" />}
       <ul className="list">
-        {
-          query.allMdx.edges.map(({ node }, index) => (
-            <ProjectsListItem nodeObj={node} key={`ProjectsListItem${index}`} />
-          ))
-        }
+        {query.edges.map(function ({ node }, index) {
+          const tags = node.frontmatter.tags
+
+          if (tagNameFilter) {
+            return tags.filter(tag => tag === tagNameFilter)
+              .map(tag => <ProjectsListItem nodeObj={node} key={`ProjectsListItem${index}`} />)
+          } else {
+            return <ProjectsListItem nodeObj={node} key={`ProjectsListItem${index}`} />
+          }
+        })}
       </ul>
     </div>
   )
