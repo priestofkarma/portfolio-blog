@@ -1,12 +1,12 @@
-import * as React from 'react'
+import React, { useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import { graphql, useStaticQuery } from 'gatsby'
 import PageIntro from '../components/PageIntro'
-import NotesList from '../components/NotesList'
+import PostList from '../components/PostList'
 import TagList from '../components/TagList'
 
-const blogPostsQuery = graphql`
+const postsQuery = graphql`
  query {
     allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}) {
       edges {
@@ -31,7 +31,13 @@ const blogPostsQuery = graphql`
 
 const BlogPage = () => {
 
-  const posts = useStaticQuery(blogPostsQuery)
+  const posts = useStaticQuery(postsQuery)
+
+  const [tagName, setTagName] = useState('')
+
+  function setTag(tag) {
+    setTagName(tagName => tag)
+  }
 
   const tags = posts.allMdx.group
 
@@ -46,17 +52,18 @@ const BlogPage = () => {
     <Layout pageTitle="Блог">
       <Seo pageTitle={pageData.title} pageDescription={pageData.description} />
       <PageIntro
-        bgColor="gradient-green"
+        // bgColor="gradient-green"
         pageTitle={pageData.title}
         text={pageData.description}
       ></PageIntro>
 
-      <section className="blog-section">
+      <div className="blog-section">
         <div className="wrapper">
-          <TagList query={tags} />
-          <NotesList query={posts.allMdx} />
+          <TagList query={tags} onTagChange={setTag}/>
+          <PostList postType="notes" tagNameFilter={tagName} query={posts.allMdx} linkText="Все заметки" />
+
         </div>
-      </section>
+      </div>
     </Layout>
   )
 }

@@ -3,12 +3,11 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
-import ProjectsList from '../components/ProjectsList'
-import NotesList from '../components/NotesList'
+import PostList from '../components/PostList'
 
-const projectsQuery = graphql`
+const postsQuery = graphql`
   query ($limitProj: Int = 2, $limitBlog: Int = 3) {
-    projectsQuery: allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}},  limit: $limitProj, sort: {fields: frontmatter___date, order: DESC}) {
+    projects: allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}},  limit: $limitProj, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           id
@@ -27,7 +26,7 @@ const projectsQuery = graphql`
         }
       }
     }
-    blogQuery: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}},  limit: $limitBlog) {
+    notes: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}},  limit: $limitBlog) {
       edges {
         node {
           id
@@ -45,8 +44,7 @@ const projectsQuery = graphql`
 
 const IndexPage = () => {
 
-  const projects = useStaticQuery(projectsQuery)
-  // const written = useStaticQuery(blogQuery)
+  const posts = useStaticQuery(postsQuery)
 
   return (
     <Layout>
@@ -104,16 +102,18 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <ProjectsList title="Последние работы" query={projects.projectsQuery} />
+          {/* <ProjectsList title="Последние работы"  query={posts.projects} /> */}
 
-          <NotesList title="Последние записи" query={projects.blogQuery} />
+          <PostList title="Последние работы" postType="projects" query={posts.projects} linkText="Все проекты" />
+          <PostList title="Последние посты" postType="notes" query={posts.notes} linkText="Все заметки" />
+
+          {/* <NotesList title="Последние записи" query={posts.notes} /> */}
 
         </div>
       </section>
 
     </Layout>
   )
-
 
 }
 
