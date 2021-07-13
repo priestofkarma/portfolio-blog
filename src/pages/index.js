@@ -4,6 +4,8 @@ import Seo from '../components/Seo'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
 import PostList from '../components/PostList'
+import { socialMenuItems } from '../utils/MenuItems'
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const postsQuery = graphql`
   query ($limitProj: Int = 2, $limitBlog: Int = 3) {
@@ -50,16 +52,15 @@ const IndexPage = () => {
     <Layout>
       <Seo pageTitle="Женя Петренко" />
       <section className="hero-section">
-        {/*<div className="hero-image"></div>*/}
         <div className="wrapper">
           <div className="hero-section_wrapper">
             <h1 className="hero-title">Привет, я Женя <span>👋</span></h1>
             <div className="hero-description">
-              <p><b>Веб-разработчик</b> с двухлетним стажем, в основном работаю в аутсорсе.
-                <b> Верстаю сайты</b> и натягиваю на <b>Wordpress</b> :)
+              <p><strong>Веб-разработчик</strong> с двухлетним стажем, в основном работаю в аутсорсе.
+                <strong> Верстаю сайты</strong> и натягиваю на <b>Wordpress :)</b>
               </p>
               <p>В настоящее время доступен для найма,
-                не стесняйтесь связаться со мной,
+                не стесняйтесь <AnchorLink to="/about#write-me" stripHash={true} title="Напишите мне!">связаться со мной</AnchorLink>,
                 чтобы обсудить детали Вашего проекта.</p>
             </div>
           </div>
@@ -76,6 +77,11 @@ const IndexPage = () => {
                 src="../images/me.jpg"
                 alt="It`s me :)"
               />
+              <ul className="soc-links">
+                {socialMenuItems && socialMenuItems.map((item, index) => (
+                  <li key={`socialitems-${index}`}><a href={item.url} target="_blank" rel="noreferrer">{item.icon}</a></li>
+                ))}
+              </ul>
             </div>
             <div className="about-section_text">
               <h4>Мои услуги включают в себя:</h4>

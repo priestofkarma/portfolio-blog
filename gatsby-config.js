@@ -16,12 +16,45 @@ module.exports = {
         trackingId: "277499018",
       },
     },
-    `gatsby-plugin-mdx`,
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-preload-link-crossorigin",
+    "@pauliescanlon/gatsby-mdx-embed",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: 'carbon',
+              theme: 'base16-light',
+              lineNumbers: true,
+            }
+          },
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -70,
+        duration: 50,
+      }
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -63,21 +96,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "webofkarma",
+        short_name: "webofkarma",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#ffffff",
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
-        icon: "src/images/logo.png", // This path is relative to the root of the site.
+        icon: "src/images/logotype.svg", // This path is relative to the root of the site.
         // An optional attribute which provides support for CORS check.
         // If you do not provide a crossOrigin option, it will skip CORS for manifest.
         // Any invalid keyword or empty string defaults to `anonymous`
         crossOrigin: `use-credentials`,
       },
     },
-    `gatsby-plugin-offline`,
   ],
 };

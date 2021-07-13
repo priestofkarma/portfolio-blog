@@ -36,6 +36,11 @@
   left: 0;
   width: 45px;
   padding: 0;
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
   transition: transform 0.1s ease-in;
   img {
     width: 100%;
@@ -98,15 +103,12 @@
   z-index: 1001;
   width: 40px;
   height: 40px;
-  top: 50%;
   right: 0;
   padding: 0;
   align-items: center;
   justify-content: center;
-  transform: translate(0, -50%);
   cursor: pointer;
   background-color: #e3effe;
-  border-radius: 8px;
   &:focus {
     background-color: #d9e9fe;
   }
@@ -116,6 +118,9 @@
 }
 
 .menu-toggle-icon {
+  // &:active, &:focus {
+  //   transform: scale(0.99);
+  // }
   span,
   span:before,
   span:after {
@@ -160,6 +165,36 @@
   transition: all 0.25s ease;
   ul {
     top: 0;
+  }
+}
+.logotype {
+  g {
+    transition: 0.25s ease;
+  }
+  &:hover {
+    animation: 1s filterLogo 0s ease;
+    .mini-left {
+      transform: translate(-10%, -15%);
+    }
+    .mini-right {
+      transform: translate(10%, -15%);
+    }
+    .large-left {
+      transform: translate(-12%, 12%);
+    }
+    .large-right {
+      transform: translate(12%, 12%);
+    }
+    .middle {
+      transform: translate(0, -8%);
+    }
+  }
+  &:active {
+    transform: scale(0.98);
+    g {
+      transform: none !important;
+      transition: 0.1s;
+    }
   }
 }
 

@@ -35,36 +35,29 @@
   body {
     font-size: 100%;
   }
+  .scroll-up {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
   :root {
-    // --h1-font-size: 1.9rem;
-    // --h2-font-size: 1.5rem;
-    // --h3-font-size: 1.16rem;
-    // --h4-font-size: 1.1rem;
-    // --h5-font-size: 1rem;
-    // --h6-font-size: 1rem;
+    --h2-font-size: 1.3rem;
+    --h3-font-size: 1.1rem;
+    --h4-font-size: 1.05rem;
   }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  .modal-form {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-  .owl-carousel .owl-nav button.owl-next,
-  .owl-carousel .owl-nav button.owl-prev {
-    font-size: 30px;
+  :root {
+    --h1-font-size: 1.6rem;
   }
 }
 
 @media only screen and (max-width: 340px) {
   body {
     font-size: 14px;
-  }
-  :root {
-    --h1-font-size: 1.6rem;
   }
 }

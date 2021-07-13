@@ -1,98 +1,43 @@
-// import React from "react"
-
-export const mainMenuItems = [
-  {
-    path: "/projects",
-    title: "проекты",
-  },
-  {
-    path: "/blog",
-    title: "Блог",
-  },
-  {
-    path: "/about",
-    title: "Обо мне",
-  },
-]
-
+import React from "react"
+import { GoMarkGithub } from "react-icons/go";
+import { FaFacebook, FaTelegram } from "react-icons/fa/";
+import { GrInstagram } from "react-icons/gr/";
 
 export const socialMenuItems = [
   {
-    // icon: <FaTwitter />,
+    icon: <FaTelegram />,
     url: "https://t.me/priestofkarma",
     name: "Telegram",
   },
   {
-    // icon: <DiGithubBadge />,
+    icon: <GrInstagram />,
     url: "https://www.instagram.com/karmasacrificer",
     name: "Instagram",
   },
   {
-    // icon: <FaLinkedin />,
+    icon: <GoMarkGithub />,
     url: "https://github.com/priestofkarma",
     name: "GitHub",
   },
   {
-    // icon: <FaLinkedin />,
+    icon: <FaFacebook />,
     url: "https://www.facebook.com/petrenko.evg",
     name: "Facebook",
   },
 
-
 ]
 
-// вывести последние 3 проекта через query
-// вывести последние 3 поста через query
-export const footerMenuItems = [
-  {
-    firstLink: {
-      path: "/projects",
-      title: "Проекты"
-    },
-    externalLinks: [
-      {
-        path: "/melloul",
-        title: "Melloul"
-      },
-      {
-        path: "/flourent",
-        title: "Flourent"
-      },
-    ]
-  },
-  {
-    firstLink: {
-      path: "/blog",
-      title: "Блог"
-    },
-
-    externalLinks: [
-      {
-        path: "/first-post",
-        title: "Первый пост"
-      },
-      {
-        path: "/second-post",
-        title: "Второй пост"
-      },
-    ]
-  },
-  {
-    firstLink: {
-      path: "/about",
-      title: "Обо мне"
-    },
-
-    externalLinks: [
-      {
-        path: "/instruments",
-        title: "Инструменты"
-      },
-      // {
-      //   path: "/second-post",
-      //   title: "Второй пост"
-      // },
-    ]
-  },
-]
-
+// export const mainMenuItems = [
+//   {
+//     path: "/projects",
+//     title: "проекты",
+//   },
+//   {
+//     path: "/blog",
+//     title: "Блог",
+//   },
+//   {
+//     path: "/about",
+//     title: "Обо мне",
+//   },
+// ]

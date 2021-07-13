@@ -2,15 +2,11 @@ import React from 'react'
 import { socialMenuItems } from '../utils/MenuItems'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import sliceString from '../utils/sliceString'
-// import kebabCase from "lodash/kebabCase"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 const _ = require("lodash")
 
 const Footer = () => {
-
-  // const {
-  //   title,
-  //   description,
-  // } = site.siteMetadata;
 
   const lstThree = useStaticQuery(lastThreePosts)
 
@@ -25,7 +21,7 @@ const Footer = () => {
               <ul className="footer-menu_list">
                 {lstThree.allTagsMdx.group.map((tag, index) => (
                   <li key={tag + index}>
-                    <Link to={`/tags/${_.kebabCase(tag.fieldValue)}`} title={tag.fieldValue} >{tag.fieldValue}</Link>
+                    <Link to={`/tags/${_.kebabCase(tag.fieldValue)}/`} title={tag.fieldValue} >{tag.fieldValue}</Link>
                   </li>
                 ))}
               </ul>
@@ -45,19 +41,20 @@ const Footer = () => {
             <div className="footer-menu_item">
               <p className="first-link">Полезности</p>
               <ul className="footer-menu_list">
-                  <li>
-                  <Link to="/instruments" title="Чем я пользуюсь">Инструменты</Link>
-                  </li>
+                <li>
+                  <Link to="/notes/instruments" title="Чем я пользуюсь">Инструменты</Link>
+                </li>
+                <li>
+                  <AnchorLink to="/about#write-me" stripHash={true} title="Напишите мне!">Cвязаться со мной</AnchorLink>
+                </li>
               </ul>
             </div>
 
             <div className="footer-menu_item">
-              <Link to="/projects" className="first-link">Соцсети</Link>
+              <p className="first-link">Соцсети</p>
               <ul className="footer-menu_list">
                 {socialMenuItems.map((item, index) => (
-                  <li key={`social-menu-item-key-${index}`}>
-                    <a href={item.url} target="_blank" rel="noreferrer">{item.name}</a>
-                  </li>
+                  <li key={`footerSocialItems-${index}`}><a href={item.url} target="_blank" rel="noreferrer">{item.name}</a></li>
                 ))}
               </ul>
             </div>
@@ -114,10 +111,10 @@ const lastThreePosts = graphql`
       }
     }
     allTagsMdx: allMdx(limit: 5) {
-        group(field: frontmatter___tags) {
-          fieldValue
-          totalCount
-        }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
+    }
   }
 `

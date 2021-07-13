@@ -7,10 +7,16 @@
 @import "./utils/link";
 @import "./utils/list";
 @import "./utils/table";
-@import "./utils/button";
+@import "./form";
 @import "./section_caption";
 @import "./utils/card_gradient";
+@import "./modules";
 @import "./tag_list";
+@import "./prev_next";
+@import "./open_post";
+@import "./soc_links";
+@import "./contact_form";
+@import "./content";
 
 // page components
 @import "header";
@@ -22,7 +28,7 @@
 // projects
 @import "posts_list";
 @import "project_list";
-@import "blog_list";
+@import "notes_list";
 @import "project_intro";
 
 // footer

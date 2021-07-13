@@ -1,0 +1,22 @@
+.soc-links {
+  display: flex;
+  justify-content: center;
+  margin: var(--gap) -7px 10px -7px;
+  li {
+    margin: 0 7px;
+  }
+  a {
+    &:hover {
+      svg {
+        fill: var(--azure);
+      }
+    }
+  }
+  svg {
+    fill: var(--chakra-colors-blueGray-700);
+    display: block;
+    width: 30px;
+    height: auto;
+    transition: 0.25s ease;
+  }
+}

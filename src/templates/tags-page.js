@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from '../components/Layout'
 import { graphql } from "gatsby"
-import NotesList from '../components/NotesList'
-import ProjectsList from '../components/ProjectsList'
+import AllTagList from '../components/AllTagList'
+import PostList from '../components/PostList'
 
 function declOfNum(number, titles) {
   let cases = [2, 0, 1, 1, 1, 2];
@@ -11,22 +11,34 @@ function declOfNum(number, titles) {
 
 const ProjectTags = ({ pageContext, data }) => {
 
-  // const tags = useStaticQuery(pageQuery)
-
   const { tag } = pageContext
+
+  // const tags = data.tags.group
 
   return (
     <Layout>
-      <section className="tags">
+      <AllTagList />
+      <div className="tags">
         <div className="wrapper">
-          {data.projectPages.totalCount !== 0 && (
-            <ProjectsList title={`${data.projectPages.totalCount} ${declOfNum(data.projectPages.totalCount, ['проект', 'проекта', 'проектов'])} с тегом "${tag}"`} query={data.projectPages} />
+
+          {data.projects.totalCount !== 0 && (
+            <PostList
+              title={`${data.projects.totalCount} ${declOfNum(data.projects.totalCount, ['проект', 'проекта', 'проектов'])} с тегом "${tag}"`}
+              postType="projects"
+              query={data.projects}
+              linkText="Все проекты"
+            />
           )}
-          {data.notesPages.totalCount !== 0 && (
-            <NotesList title={`${data.notesPages.totalCount} заметки`} query={data.notesPages} />
+          {data.notes.totalCount !== 0 && (
+            <PostList
+              title={`${data.notes.totalCount} ${declOfNum(data.notes.totalCount, ['заметка', 'заметки', 'заметок'])} с тегом "${tag}"`}
+              postType="notes"
+              query={data.notes}
+              linkText="Все проекты"
+            />
           )}
         </div>
-      </section>
+      </div>
     </Layout>
   )
 }
@@ -35,7 +47,13 @@ export default ProjectTags
 
 export const pageQuery = graphql`
   query ($tag: String) {
-    projectPages: allMdx(
+    tags: allMdx {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+    }
+    projects: allMdx(
       sort: {fields: [frontmatter___date], order: DESC}
       filter: {fileAbsolutePath: {regex: "/content/projects/"}, frontmatter: {tags: {in: [$tag]}}}
     ) {
@@ -44,6 +62,7 @@ export const pageQuery = graphql`
         node {
           slug
           frontmatter {
+            description
             title
             tags
             path
@@ -57,7 +76,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    notesPages: allMdx(
+    notes: allMdx(
       sort: {fields: [frontmatter___date], order: DESC}
       filter: {fileAbsolutePath: {regex: "/content/notes/"}, frontmatter: {tags: {in: [$tag]}}}
     ) {

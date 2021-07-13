@@ -1,0 +1,13 @@
+.post-info {
+  padding: 20px 0;
+  // &_item {}
+  &_tags {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px -13px;
+    a {
+      padding: 5px 13px;
+    }
+  }
+}

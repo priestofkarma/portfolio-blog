@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
 
 const TagList = ({ query, onTagChange }) => {
-  const [activeTag, setActiveTag] = useState("")
+  const [activeTag, setActiveTag] = useState(null)
 
 
   function onClickTag(e) {
-    onTagChange(e.target.getAttribute("tagvalue"))
-    setActiveTag(activeTag => e.target.getAttribute("tagvalue"))
+    let target = e.target;
+    if (target.tagName === 'BUTTON') {
+      onTagChange(e.target.getAttribute("tagvalue"))
+      setActiveTag(activeTag => e.target.getAttribute("tagvalue"))
+      if (target.getAttribute("tagvalue") == null) {
+        onTagChange(null)
+        setActiveTag(activeTag => null)
+      }
+    }
   }
 
   function clearFilter() {
@@ -14,17 +21,8 @@ const TagList = ({ query, onTagChange }) => {
     setActiveTag(activeTag => null)
   }
 
-  // clear button
-  const ClearFilterBtn = () => (
-    <button
-      className="unfilter"
-      onClick={clearFilter}
-    >celar filter</button>
-  )
-
   // buttons
   const FilterButton = ({ tagValue }) => {
-
     return (
       <button
         className={tagValue.fieldValue === activeTag ? "active-tag" : ""}
@@ -32,21 +30,29 @@ const TagList = ({ query, onTagChange }) => {
         onClick={onClickTag}
         onKeyDown={onClickTag}
       >
-        {tagValue.fieldValue} ({tagValue.totalCount})
+        {tagValue.fieldValue} <span><b>{tagValue.totalCount}</b></span>
       </button>
     )
   }
 
-
   return (
-    <div className="tag-list">
-      {query.map(tag => {
-        return (
-          <FilterButton key={tag.fieldValue} tagValue={tag} />
-        )
-      })}
-      {activeTag ? <ClearFilterBtn /> : null}
-    </div>
+    <>
+      <div className="h4">Фильтр по тегу:</div>
+      <div className="tag-list">
+        <button
+          className={`unfilter ${activeTag === null ? "active-tag" : ""}`}
+          onClick={clearFilter}
+        >
+          All
+        </button>
+
+        {query.map(tag => {
+          return (
+            <FilterButton key={tag.fieldValue} tagValue={tag} />
+          )
+        })}
+      </div>
+    </>
   )
 }
 

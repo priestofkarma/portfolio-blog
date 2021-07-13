@@ -12,7 +12,7 @@
   // animation-fill-mode: both;
   &_wrapper {
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 35% 1fr;
     column-gap: calc(var(--gap) * 1.5);
     row-gap: calc(var(--gap) * 2.5);
     // justify-content: space-between;
@@ -23,7 +23,7 @@
       box-shadow: var(--shadow-lg);
       border-radius: var(--border-radius);
       width: 100%;
-      max-width: 500px;
+      // max-width: 500px;
       img {
         border-radius: var(--border-radius);
       }
@@ -58,6 +58,7 @@
       .gatsby-image-wrapper {
         width: 100%;
         max-width: 414px;
+        margin: 0 auto;
       }
     }
   }

@@ -13,6 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug
             frontmatter {
               path
+              title
             }
           }
         }
@@ -24,6 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug
             frontmatter {
               path
+              title
             }
           }
         }
@@ -46,26 +48,44 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const projects = queryPages.data.queryProject.edges
   const singleProjectTemplate = path.resolve(`./src/templates/single-project.js`);
+
   projects.forEach(({ node }, index) => {
+
+    const prev = index === 0 ? null : projects[index - 1];
+    const next = index === projects.length - 1 ? null : projects[index + 1];
+
     createPage({
       path: `${node.frontmatter.path}`,
       component: singleProjectTemplate,
-      context: { id: node.id },
+      context: {
+        id: node.id,
+        prev,
+        next,
+      },
     })
   })
 
   const posts = queryPages.data.queryNotes.edges
   const singlePostTemplate = path.resolve(`./src/templates/single-post.js`);
+
   posts.forEach(({ node }, index) => {
+
+    const prev = index === 0 ? null : posts[index - 1];
+    const next = index === posts.length - 1 ? null : posts[index + 1];
+
     createPage({
       path: `${node.frontmatter.path}`,
       component: singlePostTemplate,
-      context: { id: node.id },
+      context: {
+        id: node.id,
+        prev,
+        next,
+      },
     })
   })
 
   const tags = queryPages.data.projectTags.group
-  const tagTemplate = path.resolve(`./src/templates/project-tags.js`);
+  const tagTemplate = path.resolve(`./src/templates/tags-page.js`);
 
   tags.forEach(node => {
     createPage({

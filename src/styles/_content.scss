@@ -1,0 +1,37 @@
+.content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 2em 0;
+  }
+}
+blockquote {
+  font-size: var(--h3-font-size);
+  margin: 3rem 0;
+  padding: 0.5rem 0 0.5rem 3rem;
+  border-left: 2px solid #202224;
+}
+.table-wrap {
+  margin: 2rem 0;
+
+  table {
+    margin: 0.5rem 0;
+    min-width: 600px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  blockquote {
+    margin: 2rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+  }
+}
+
+iframe,
+img,
+video {
+  max-width: 100%;
+}

@@ -6,7 +6,10 @@ ol,
 ul {
   margin: 1.2rem 0 1.2rem 0;
 }
-
+ul, ol {
+  padding-left: 2em;
+  line-height: 1.5em;
+}
 ul {
   ul {
     margin: 0;
