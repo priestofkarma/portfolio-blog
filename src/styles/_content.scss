@@ -8,36 +8,6 @@
     margin: 3em 0 1em 0;
   }
 }
-pre {
-  max-height: 40em;
-}
-
-pre[class*="language-"] {
-    padding-top: 2em;
-}
-
-.gatsby-highlight pre[class*="language-"]::before {
-  content: "";
-  background: var(--theme-ui-colors-grey-30, #d9d7e0);
-  border-radius: 0px 0px 4px 4px;
-  color: var(--theme-ui-colors-grey-90, #232129);
-  font-size: 0.75rem;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  letter-spacing: 0.075em;
-  line-height: 1;
-  padding: 0.25rem 0.5rem;
-  position: absolute;
-  left: 4em;
-  text-align: right;
-  text-transform: uppercase;
-  top: 0px;
-}
-
-.gatsby-highlight pre.language-javascript::before,
-.gatsby-highlight pre.language-js::before {
-  content: "js";
-  background: rgb(247, 223, 30);
-}
 
 img {
   display: inline-block;
@@ -55,9 +25,9 @@ blockquote {
   padding: 0.5rem 0 0.5rem 3rem;
   border-left: 2px solid #202224;
 }
+
 .table-wrap {
   margin: 2rem 0;
-
   table {
     margin: 0.5rem 0;
     min-width: 600px;

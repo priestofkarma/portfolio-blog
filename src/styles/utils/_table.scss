@@ -13,6 +13,7 @@ table {
   display: table;
   overflow-x: initial;
   border: 2px solid #202224;
+  border-radius: var(--border-radius);
 }
 thead {
   background: #202224;

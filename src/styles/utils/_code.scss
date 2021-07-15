@@ -1,0 +1,68 @@
+pre {
+  max-height: 40em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+}
+
+pre[class*="language-"] {
+  padding-top: 2em;
+}
+
+.gatsby-highlight pre[class*="language-"]::before {
+  content: "";
+  background: var(--theme-ui-colors-grey-30, #d9d7e0);
+  border-radius: 0px 0px 4px 4px;
+  color: var(--theme-ui-colors-grey-90, #232129);
+  font-size: 0.75rem;
+  font-family: "Code Source Pro", monospace;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  left: 4em;
+  text-shadow: none;
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0px;
+}
+
+.gatsby-highlight {
+  pre {
+    &.language-javascript::before,
+    &.language-js::before {
+      content: "js";
+      background: rgb(247, 223, 30);
+    }
+    &.language-jsx::before {
+      content: "jsx";
+      background: rgb(247, 223, 30);
+    }
+    &.language-graphql::before {
+      content: "graphql";
+      color: #ffffff;
+      background: rgb(229, 53, 171);
+    }
+
+    &.language-css::before {
+      content: "css";
+      color: #ffffff;
+      background: #4169e1;
+    }
+    &.language-scss::before {
+      content: "scss";
+      color: #ffffff;
+      background: rgb(207, 100, 154);
+    }
+    &.language-sass::before {
+      content: "sass";
+      color: #ffffff;
+      background: rgb(207, 100, 154);
+    }
+    &.language-html::before {
+      content: "html";
+      color: #ffffff;
+      background: rgb(228, 77, 38);
+    }
+  }
+}
