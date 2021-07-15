@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: "http://www.webofkarma.com",
     title: "Веб-разработчик",
     description: "Портфолио веб-разработчика, фрилансера и просто хорошего парня.",
-    image: "src/images/zaglushka-2.jpg",
+    image: "src/images/me.jpg",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -25,12 +25,35 @@ module.exports = {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           `gatsby-remark-copy-linked-files`,
-          {
-            resolve: `gatsby-remark-highlight-code`,
+            {
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              terminal: 'carbon',
-              theme: 'base16-light',
-              lineNumbers: true,
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [
+              {
+                language: "superscript",
+                extend: "javascript",
+                definition: {
+                  superscript_types: /(SuperType)/,
+                },
+                insertBefore: {
+                  function: {
+                    superscript_keywords: /(superif|superelse)/,
+                  },
+                },
+              },
+              ],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+
             }
           },
           {
@@ -44,13 +67,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-highlight-code`
-          },
-        ],
-      },
     },
     {
       resolve: "gatsby-plugin-anchor-links",
@@ -98,7 +114,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
-        icon: "src/images/logotype.svg", // This path is relative to the root of the site.
+        icon: "src/images/logotype-2.svg", // This path is relative to the root of the site.
         // An optional attribute which provides support for CORS check.
         // If you do not provide a crossOrigin option, it will skip CORS for manifest.
         // Any invalid keyword or empty string defaults to `anonymous`

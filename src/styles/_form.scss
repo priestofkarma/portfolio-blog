@@ -79,8 +79,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: var(--azure);
-  border: 0.1rem solid var(--azure-dark);
+  background-color: var(--primary);
+  border: 0.1rem solid var(--primary-dark);
   border-radius: var(--border-radius);
   cursor: pointer;
   color: #fff;
@@ -95,12 +95,12 @@ input[type="submit"] {
   transition: background-color 0.25s ease, box-shadow 0.5s ease, transform 0.1s ease;
 
   &:hover {
-    background-color: var(--azure-light);
-    border-color: var(--azure-light);
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
   }
   &:focus {
-    background-color: var(--azure-dark);
-    border-color: var(--azure-dark);
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
     outline: 0;
   }
   &:active {
@@ -114,13 +114,13 @@ input[type="submit"] {
     background-color: transparent;
     color: var(--black);
     &:hover {
-      background-color: var(--azure-light);
-      border-color: var(--azure-light);
+      background-color: var(--primary-light);
+      border-color: var(--primary-light);
       color: #ffffff;
     }
     &:focus {
-      background-color: var(--azure-dark);
-      border-color: var(--azure-dark);
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
       color: #ffffff;
       outline: 0;
     }
@@ -144,8 +144,8 @@ input:not([type]),
 input[type="radio"] + label,
 textarea,
 select {
-  border-radius: var(--vorder-radius);
-  background-color: var(--chakra-colors-blueGray-100);
+  border-radius: var(--border-radius);
+  background-color: var(--gray-30);
   border: 1px solid transparent;
   box-shadow: none;
   -webkit-appearance: none;
@@ -228,7 +228,7 @@ label,
 legend {
   display: block;
   font-size: 1rem;
-  color: var(--chakra-colors-blueGray-600);
+  color: var(--gray-400);
   margin-bottom: 0.5rem;
 }
 

@@ -8,6 +8,10 @@
     margin: 3em 0 1em 0;
   }
 }
+pre {
+  max-height: 40em;
+}
+
 img {
   display: inline-block;
   border-radius: var(--border-radius);

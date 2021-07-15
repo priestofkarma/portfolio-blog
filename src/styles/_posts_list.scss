@@ -62,8 +62,8 @@
       display: inline-block;
       margin: 0 4px;
       padding: 7px 10px;
-      background-color: var(--chakra-colors-blueGray-200);
-      color: var(--chakra-colors-blueGray-500);
+      background-color: var(--gray-50);
+      color: var(--gray-500);
       border-radius: 13px;
       transition: 0.5s ease;
       box-shadow: 0px 2px 4px 0px rgb(0, 0, 0, 0.3);
@@ -105,7 +105,7 @@
 }
 
 .azure-light {
-  background-color: var(--azure-light);
+  background-color: var(--primary-light);
 }
 .indigo-light {
   background-color: var(--indigo-light);

@@ -23,7 +23,7 @@
     margin-top: auto;
     height: 2px;
     width: 100%;
-    background: var(--azure);
+    background: var(--primary);
   }
   .circle {
     position: absolute;
@@ -32,7 +32,7 @@
     height: 60px;
     width: 60px;
     left: 0;
-    background: var(--azure);
+    background: var(--primary);
     border-radius: 20%;
     -webkit-animation: move 5s infinite;
     animation: move 5s infinite;

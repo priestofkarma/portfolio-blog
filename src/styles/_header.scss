@@ -61,20 +61,11 @@
   -ms-flex-pack: flex-end;
   justify-content: flex-end;
   transition: 0.5s ease;
-  /* opacity: 0;
-    -webkit-transform: translate3d(0, -30%, 0);
-    transform: translate3d(0, -30%, 0);
-    -webkit-animation: fadeInDown 0.7s ease;
-    animation: fadeInDown 0.7s ease;
-    -webkit-animation-delay: 0.7s;
-    animation-delay: 0.7s; */
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
   a {
     display: inline-block;
     &:hover,
     &:focus {
-      color: var(--azure);
+      color: var(--primary);
     }
   }
 }
@@ -85,10 +76,8 @@
   }
   ul {
     padding: 0;
-    // margin: 0 10px;
     li {
       display: inline;
-      /* margin: 0 10px; */
       &:last-of-type {
         margin: 0;
       }
@@ -118,9 +107,6 @@
 }
 
 .menu-toggle-icon {
-  // &:active, &:focus {
-  //   transform: scale(0.99);
-  // }
   span,
   span:before,
   span:after {
@@ -130,7 +116,7 @@
     width: 18px;
     height: 3px;
     transition: all 0.12s;
-    background: var(--azure);
+    background: var(--primary);
     border-radius: 4px;
   }
   span:before {
@@ -167,10 +153,52 @@
     top: 0;
   }
 }
+
 .logotype {
   g {
     transition: 0.25s ease;
   }
+  // .mini-left path {
+  //   fill: var(--green-800);
+  // }
+  // .mini-right path {
+  //   fill: var(--green-800);
+  // }
+  // .large-left path {
+  //   fill: var(--green-500);
+  // }
+  // .large-right path {
+  //   fill: var(--green-600);
+  // }
+  // .middle {
+  //   path:nth-child(1) {
+  //     fill: var(--green-200);
+  //   }
+  //   path:nth-child(2) {
+  //     fill: var(--green-400);
+  //   }
+  // }
+  // .mini-left path {
+  //   fill: var(--blue-600);
+  // }
+  // .mini-right path {
+  //   fill: var(--blue-600);
+  // }
+  // .large-left path {
+  //   fill: var(--blue-300);
+  // }
+  // .large-right path {
+  //   fill: var(--blue-500);
+  // }
+  // .middle {
+  //   path:nth-child(1) {
+  //     fill: var(--blue-50);
+  //   }
+  //   path:nth-child(2) {
+  //     fill: var(--blue-200);
+  //   }
+  // }
+
   &:hover {
     animation: 1s filterLogo 0s ease;
     .mini-left {

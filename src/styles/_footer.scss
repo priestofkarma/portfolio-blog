@@ -4,9 +4,7 @@
 .footer {
   padding: var(--section-space) 0;
   color: #ffffff;
-  background: #334155;
-  // background: linear-gradient(to bottom, #4b5866 0%, #29323c 100%);
-  // background: linear-gradient(to bottom, #4B5884 0%, #293245 100%);
+  background: #33415C;
   a {
     color: #ffffff;
   }
@@ -35,7 +33,7 @@
     list-style: none;
     a {
       font-weight: 300;
-      color: var(--colors-gray-300);
+      color: var(--gray-100);
     }
     li {
       padding: 4px 0;
@@ -64,7 +62,7 @@
     text-decoration: underline;
     &:hover,
     &:focus {
-      color: var(--azure);
+      color: var(--primary);
     }
   }
 }

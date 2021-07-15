@@ -11,10 +11,10 @@
   right: 40px;
   transition: var(--transition);
   border-radius: 50%;
-  border: 3px solid var(--chakra-colors-blueGray-300);
+  border: 3px solid var(--gray-100);
   padding: 7px;
   svg {
-    fill: var(--chakra-colors-blueGray-300);
+    fill: var(--gray-100);
     display: block;
     width: 100%;
     transform: rotate(-90deg);

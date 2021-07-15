@@ -36,7 +36,7 @@
       }
       &[aria-current="page"] {
         font-weight: bold;
-        color: var(--azure);
+        color: var(--primary);
       }
       &:hover {
         color: inherit;
@@ -57,7 +57,7 @@
     display: inline-block;
     cursor: pointer;
     background-color: transparent;
-    color: var(--chakra-colors-blueGray-500);
+    color: var(--gray-400);
     margin: 5px;
     border-radius: var(--border-radius);
     border: none;
@@ -69,7 +69,7 @@
       line-height: 1;
       padding: 3px 7px;
       border-radius: 7px;
-      background-color: var(--chakra-colors-blueGray-200);
+      background-color: var(--gray-30);
       pointer-events: none;
       position: relative;
       transition: inherit;
@@ -91,14 +91,14 @@
       }
     }
     &.active-tag:not(.unfliter) {
-      background-color: var(--azure);
+      background-color: var(--primary);
       color: #ffffff;
       span {
-        background-color: var(--azure-light);
+        background-color: var(--primary-light);
       }
     }
     &:hover {
-      border-color: var(--chakra-colors-blueGray-300);
+      border-color: var(--gray-100);
       box-shadow: var(--shadow-lg);
     }
     &:active,
@@ -106,7 +106,7 @@
       transition: 0.1s;
       transform: scale(0.95);
       box-shadow: var(--shadow-md);
-      background-color: var(--chakra-colors-blueGray-300);
+      background-color: var(--gray-30);
     }
   }
 }

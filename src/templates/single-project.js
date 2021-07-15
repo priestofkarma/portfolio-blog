@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PrevNext from "../components/PrevNext"
-import kebabCase from "lodash/kebabCase"
+// import kebabCase from "lodash/kebabCase"
 
 export const pageQuery = graphql`
   query singleProjectQuery($id: String) {
@@ -30,7 +30,7 @@ const shortcodes = { Link } // Provide common components here
 
 export default function PageTemplate({ data: { mdx }, pageContext: { prev, next } }) {
 
-  const {title, projectLink, tags, instruments, description} = mdx.frontmatter
+  const {title, projectLink, instruments, description} = mdx.frontmatter
 
   return (
     <Layout>
@@ -64,7 +64,7 @@ export default function PageTemplate({ data: { mdx }, pageContext: { prev, next 
           {projectLink && (
             <div className="post-info_item">
               <p className="h5">Ссылка на проект:</p>
-              <a href={projectLink} target="_blank">{title}</a>
+              <a href={projectLink} target="_blank" rel="noreferrer">{title}</a>
             </div>
           )}
 

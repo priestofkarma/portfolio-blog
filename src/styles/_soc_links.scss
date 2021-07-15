@@ -8,12 +8,12 @@
   a {
     &:hover {
       svg {
-        fill: var(--azure);
+        fill: var(--primary);
       }
     }
   }
   svg {
-    fill: var(--chakra-colors-blueGray-700);
+    fill: var(--gray-500);
     display: block;
     width: 30px;
     height: auto;
