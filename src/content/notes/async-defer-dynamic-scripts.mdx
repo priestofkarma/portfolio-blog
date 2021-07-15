@@ -85,12 +85,13 @@ The theme also supports markdown tables:
 
 
 
-```jsx
+```js{numberLines: 5}
 import * as React from "react";
 import { graphql } from "gatsby";
 
 const IndexPage = ({ data }) => {
   return (
+    
     <main>
       <p>This site was last built on:</p>
       <p>{data.site.buildTime}</p>
@@ -108,9 +109,3 @@ export const query = graphql`
   }
 `;
 ```
-
-
-### Image carousels
-
-<YouTube youTubeId="https://youtu.be/02RUvvMx7MA" /> 
-
