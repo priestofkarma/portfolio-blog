@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import { MDXProvider } from "@mdx-js/react"
+import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
@@ -8,7 +8,6 @@ import Seo from "../components/Seo"
 import PrevNext from "../components/PrevNext"
 import kebabCase from "lodash/kebabCase"
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-import { MdxEmbedProvider } from '@pauliescanlon/gatsby-mdx-embed';
 
 
 export const pageQuery = graphql`
@@ -48,9 +47,10 @@ const PageTemplate = ({ data: { mdx }, pageContext: { prev, next } }) => {
           </div>
         </div>
         <div className="content">
-          <MdxEmbedProvider components={shortcodes}>
+
+          <MDXProvider components={shortcodes}>
             <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
-          </MdxEmbedProvider>
+          </MDXProvider>
         </div>
         <PrevNext prev={prev} next={next} postType="заметка" />
       </div>

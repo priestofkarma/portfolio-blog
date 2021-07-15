@@ -5,31 +5,18 @@ module.exports = {
     description: "Портфолио веб-разработчика, фрилансера и просто хорошего парня.",
     image: "src/images/zaglushka-2.jpg",
   },
-
-
   plugins: [
     "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "@pauliescanlon/gatsby-mdx-embed",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "277499018",
-      },
-    },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-preload-link-crossorigin",
-    "@pauliescanlon/gatsby-mdx-embed",
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-highlight-code`
-          },
-        ],
       },
     },
     {
@@ -37,6 +24,7 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-highlight-code`,
             options: {
@@ -44,6 +32,22 @@ module.exports = {
               theme: 'base16-light',
               lineNumbers: true,
             }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 920,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`
           },
         ],
       },
@@ -56,42 +60,32 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/src/pages`,
       },
-      __key: "pages",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images`,
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "projects",
-        path: "./src/content/projects/",
+        path: `${__dirname}/src/content/projects`,
       },
-      __key: "projects",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "blog",
-        path: "./src/content/notes/",
+        path: `${__dirname}/src/content/notes`,
       },
-      __key: "blog",
     },
     {
       resolve: `gatsby-plugin-manifest`,

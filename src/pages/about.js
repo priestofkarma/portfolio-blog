@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 // import PageIntro from '../components/PageIntro'
@@ -20,7 +20,7 @@ const AboutPage = () => {
             <section>
                 <div className="wrapper">
                     <h1>{pageData.title}</h1>
-                    <a href="../images/resume.pdf" download>резюме</a>
+                    <a href="../../static/resume.pdf" download>резюме</a>
                     <ContactForm/>
                 </div>
             </section>
