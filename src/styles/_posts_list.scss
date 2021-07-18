@@ -69,6 +69,12 @@
       box-shadow: 0px 2px 4px 0px rgb(0, 0, 0, 0.3);
     }
   }
+  .gatsby-image-wrapper {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  img {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
   .list-item {
     &_image {
       width: 100%;

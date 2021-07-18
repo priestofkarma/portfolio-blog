@@ -3,7 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import '../styles/main.scss'
 
-const Layout = ({ children }) => {
+const Layout = ({ clazzName, children }) => {
 
   useEffect(() => {
 
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       {/* <Seo pageTitle={pageConcatTitle} /> */}
       <Header />
 
-      <main className="page_container">
+      <main className={`page_container ${clazzName ? clazzName : ''}`}>
         {children}
 
       </main>

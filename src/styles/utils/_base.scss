@@ -3,7 +3,10 @@
 *:after {
   box-sizing: border-box;
 }
-
+::selection {
+  background: var(--blue-50);
+  color: #ffffff;
+}
 a {
   -webkit-transition: 0.25s ease;
   -o-transition: 0.25s ease;
@@ -15,8 +18,6 @@ a {
     color: var(--primary);
   }
 }
-
-
 
 textarea {
   resize: none;
@@ -67,6 +68,14 @@ body {
   flex: 1 0 auto;
   position: relative;
   z-index: 1;
+  // &.projects {
+  //   background-image: url("../images/projects-bg.svg");
+  //   background-size: 1000px;
+  // }
+  // &.notes {
+  //   background-image: url("../images/notes-bg.svg");
+  //   background-size: 700px;
+  // }
   section:last-of-type {
     padding-bottom: var(--section-space);
   }

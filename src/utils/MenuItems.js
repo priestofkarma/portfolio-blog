@@ -1,9 +1,14 @@
 import React from "react"
 import { GoMarkGithub } from "react-icons/go";
-import { FaFacebook, FaTelegram } from "react-icons/fa/";
+import { FaFacebook, FaTelegram, FaPhoneSquareAlt } from "react-icons/fa/";
 import { GrInstagram } from "react-icons/gr/";
 
 export const socialMenuItems = [
+  {
+    icon: <FaPhoneSquareAlt />,
+    url: "tel:+380632071229",
+    name: "Telephone",
+  },
   {
     icon: <FaTelegram />,
     url: "https://t.me/priestofkarma",

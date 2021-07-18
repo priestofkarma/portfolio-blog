@@ -1,24 +1,74 @@
 .hero-section {
-  padding: calc(var(--section-space) * 2.5) 0;
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    svg {
+      position: absolute;
+      display: block;
+      height: auto;
+    }
+    svg:nth-child(1) {
+      width: 5rem;
+      left: 4% !important;
+      top: 30% !important;
+    }
+    svg:nth-child(2) {
+      width: 9rem;
+      left: 89% !important;
+      top: 46% !important;
+    }
+    svg:nth-child(3) {
+      width: 9rem;
+      left: 16% !important;
+      top: 79% !important;
+    }
+    svg:nth-child(4) {
+      width: 4rem;
+      left: 70% !important;
+      top: 6% !important;
+    }
+    svg:nth-child(5) {
+      width: 5rem;
+      left: 66% !important;
+      top: 60% !important;
+    }
+  }
+  // padding: calc(var(--section-space) * 2.5) 0;
+  padding-bottom: calc(var(--section-space) * 1.2);
+  // height: calc(100vh - var(--section-space) - var(--header-height));
+  height: calc(100vh - var(--header-height) - var(--section-space));
+  min-height: 640px;
+  max-height: 850px;
+  display: flex;
+  align-items: center;
   text-align: center;
   margin: 0 auto;
   position: relative;
-  background: url("../images/endless-clouds.svg");
-  background-size: 50px;
+  background: url("../images/rectangle-frame.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
   &:after {
-    content: "";
-    background: -o-linear-gradient(bottom, #fff 0, rgba(255, 255, 255, 0) 100%);
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), to(rgba(255, 255, 255, 0)));
-    background: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 100%);
-    display: block;
+    // content: "";
+    // background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), to(rgba(255, 255, 255, 0)));
+    // background: linear-gradient(to top, #fff 0, rgba(255, 255, 255, 0) 100%);
     position: absolute;
+    display: block;
+    // background: url("../images/waves.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
     height: 60%;
     width: 100%;
     left: 0;
     bottom: 0;
   }
   .wrapper {
-    z-index: 1;
+    z-index: 2;
     margin: auto;
   }
   .hero-image {
@@ -55,15 +105,6 @@
     display: inline-block;
     animation: 1s helloHand 0s ease infinite alternate;
   }
-  // opacity: 0;
-  // -webkit-transform: translate3d(30%, 0, 0);
-  // transform: translate3d(30%, 0, 0);
-  // -webkit-animation: fadeInRight 0.7s ease;
-  // animation: fadeInRight 0.7s ease;
-  // -webkit-animation-delay: 0.7s;
-  // animation-delay: 0.7s;
-  // -webkit-animation-fill-mode: both;
-  // animation-fill-mode: both;
 }
 @keyframes helloHand {
   0% {
@@ -78,25 +119,64 @@
   }
 }
 .hero-description {
-  font-size: 1.24em;
+  // font-size: 1.24em;
+  font-size: var(--h4-font-size);
   font-weight: 300;
   max-width: 54ch;
   margin: 0 auto;
-  b, strong {
+  margin-bottom: 2em;
+  b,
+  strong {
     font-weight: 400;
   }
-  // opacity: 0;
-  // -webkit-transform: translate3d(-30%, 0, 0);
-  // transform: translate3d(-30%, 0, 0);
-  // -webkit-animation: fadeInLeft 0.7s ease;
-  // animation: fadeInLeft 0.7s ease;
-  // -webkit-animation-delay: 0.7s;
-  // animation-delay: 0.7s;
-  // -webkit-animation-fill-mode: both;
-  // animation-fill-mode: both;
+}
+.hero-section {
+  .pic {
+    position: absolute;
+    z-index: 1;
+    fill: currentcolor;
+  }
+  .pic-1 {
+    color: var(--pink);
+    right: -14rem;
+    top: 3rem;
+    width: 18rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  .hero-section {
+    padding: calc(var(--section-space) * 2.5) 0;
+    height: auto;
+    min-height: auto;
+    .particles {
+      svg:nth-child(1) {
+        width: 3rem;
+        left: 4% !important;
+        top: 30% !important;
+      }
+      svg:nth-child(2) {
+        width: 7rem;
+        left: 89% !important;
+        top: 46% !important;
+      }
+      svg:nth-child(3) {
+        width: 5rem;
+        left: 16% !important;
+        // top: 74% !important;
+      }
+      svg:nth-child(4) {
+        width: 2rem;
+        left: 70% !important;
+        top: 6% !important;
+      }
+      svg:nth-child(5) {
+        width: 3rem;
+        left: 66% !important;
+        top: 60% !important;
+      }
+    }
+  }
   .hero-title {
     font-size: var(--h1-font-size);
   }

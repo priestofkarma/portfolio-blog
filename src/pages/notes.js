@@ -49,7 +49,7 @@ const BlogPage = () => {
   }
 
   return (
-    <Layout pageTitle="Блог">
+    <Layout pageTitle="Заметочки" clazzName="notes">
       <Seo pageTitle={pageData.title} pageDescription={pageData.description} />
       <PageIntro
         // bgColor="gradient-green"

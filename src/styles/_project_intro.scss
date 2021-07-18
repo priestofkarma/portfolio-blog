@@ -6,3 +6,17 @@
     font-family: var(--additional-font);
   }
 }
+.project_link {
+  svg {
+    transition: var(--transition);
+    margin-left: 0.5rem;
+    height: 0.85rem;
+    width: 0.85rem;
+  }
+
+  &:hover {
+    svg {
+      fill: var(--primary);
+    }
+  }
+}

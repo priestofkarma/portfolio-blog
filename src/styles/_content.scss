@@ -46,3 +46,8 @@ img,
 video {
   max-width: 100%;
 }
+
+.gatsby-resp-image-wrapper {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+}

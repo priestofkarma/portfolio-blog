@@ -54,7 +54,7 @@ const ProjectsPage = () => {
   }
 
   return (
-    <Layout pageTitle={pageData.title}>
+    <Layout pageTitle={pageData.title} clazzName="projects">
       <Seo pageTitle="Проекты" pageDescription={pageData.title} />
       <PageIntro
         bgColor={pageData.color}

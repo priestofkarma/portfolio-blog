@@ -23,9 +23,13 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
+        plugins: [
+        `gatsby-remark-images`,
+        `gatsby-remark-images-medium-zoom` // Important!
+        ],
         gatsbyRemarkPlugins: [
           `gatsby-remark-copy-linked-files`,
-            {
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
@@ -46,8 +50,13 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 920,
+              linkImagesToOriginal: false
             },
           },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {}
+          } 
         ],
       },
     },
