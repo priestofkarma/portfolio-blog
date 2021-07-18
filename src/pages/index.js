@@ -52,6 +52,8 @@ const IndexPage = () => {
       let parallaxInstance = new Parallax(particlesWrap, {
         invertX: false,
         invertY: false,
+        hoverOnly: true,
+        clipRelativeInput: true,
       });
     }, [])
 
@@ -82,6 +84,7 @@ const IndexPage = () => {
 
 
         </div>
+        
         <div className="wrapper">
           <div  className="hero-section_wrapper">
             <h1 className="hero-title">Привет, я Женя <span>👋</span></h1>
