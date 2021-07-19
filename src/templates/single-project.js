@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PrevNext from "../components/PrevNext"
+import InfoMd from "../components/shortcodes/InfoMd"
 
 export const pageQuery = graphql`
   query singleProjectQuery($id: String) {
@@ -21,7 +22,6 @@ export const pageQuery = graphql`
         tags
         instruments
         description
-        introImage
         featuredImageAlt
         featuredImage {
           childImageSharp {
@@ -32,23 +32,23 @@ export const pageQuery = graphql`
     }
   }
 `
-const shortcodes = { Link }
 
+const shortcodes = { Link, InfoMd }
 
 export default function PageTemplate({ data: { mdx }, pageContext: { prev, next } }) {
 
-  const {title, projectLink, price, instruments, description, featuredImageAlt, featuredImage, introImage} = mdx.frontmatter
+  const {title, projectLink, price, instruments, description, featuredImage} = mdx.frontmatter
 
   const imageSrc = featuredImage.childImageSharp.gatsbyImageData.images.fallback.src
 
   return (
     <Layout>
-      <Seo />
+      <Seo pageTitle={title} pageDescription={description} pageImage={imageSrc} />
       <div className="project-intro">
         <div className="project-bg" style={{ backgroundImage: `url(${imageSrc})`,  
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat', 
-        backgroundPosition: 'center center' }}></div>
+        backgroundPosition: 'center center',}}></div>
         <div className="wrapper">
           <div className="post-info project-info">
 

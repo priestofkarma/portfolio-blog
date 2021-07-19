@@ -7,7 +7,9 @@
   }
 }
 .project_link {
+  color: var(--black);
   svg {
+    fill: currentcolor;
     transition: var(--transition);
     margin-left: 0.5rem;
     height: 0.85rem;

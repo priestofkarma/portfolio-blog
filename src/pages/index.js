@@ -49,7 +49,7 @@ const IndexPage = () => {
 
     useEffect(() => {
       let particlesWrap = document.querySelector(".particles");
-      let parallaxInstance = new Parallax(particlesWrap, {
+      new Parallax(particlesWrap, {
         invertX: false,
         invertY: false,
         hoverOnly: true,
@@ -61,7 +61,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo pageTitle="Женя Петренко" />
+      <Seo pageTitle="Веб-разработчик" />
 
       <section className="hero-section" >
         

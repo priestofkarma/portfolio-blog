@@ -50,16 +50,15 @@ const ProjectsPage = () => {
   const pageData = {
     title: "Мои проекты",
     description: "Проекты и задачи, над которыми я работал.",
-    color: "gradient-violet"
   }
 
   return (
-    <Layout pageTitle={pageData.title} clazzName="projects">
-      <Seo pageTitle="Проекты" pageDescription={pageData.title} />
+    <Layout clazzName="projects">
+      <Seo pageTitle={pageData.title} pageDescription={pageData.title} />
       <PageIntro
         bgColor={pageData.color}
         pageTitle={pageData.title}
-        text="Проекты и задачи, над которыми я работал. Это только малая часть, большинство проектов по договору не могу показать в портфолио."
+        text="Проекты и задачи, над которыми я работал. Это не все работы, большинство проектов по договору не могу показать в портфолио."
       ></PageIntro>
       <div className="posts-list-wrapper">
         <div className="wrapper">

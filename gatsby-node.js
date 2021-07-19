@@ -6,7 +6,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const queryPages = await graphql(`
     query {
-      queryProject: allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}) {
+      queryProject: allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}
+      sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             id
@@ -18,7 +19,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      queryNotes: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}) {
+      queryNotes: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}
+      sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             id
@@ -36,8 +38,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           totalCount
         }
       }
-
-
     }
   `)
 
@@ -66,6 +66,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   const posts = queryPages.data.queryNotes.edges
+
   const singlePostTemplate = path.resolve(`./src/templates/single-post.js`);
 
   posts.forEach(({ node }, index) => {

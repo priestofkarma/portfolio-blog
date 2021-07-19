@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "http://www.webofkarma.com",
-    title: "Веб-разработчик",
+    title: "Женя Петренко",
     description: "Портфолио веб-разработчика, фрилансера и просто хорошего парня.",
     image: "src/images/me.jpg",
   },
@@ -50,7 +50,8 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 920,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
+              quality: 100,
             },
           },
           {

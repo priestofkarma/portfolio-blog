@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import { graphql } from "gatsby"
 import AllTagList from '../components/AllTagList'
 import PostList from '../components/PostList'
+import Seo from '../components/Seo'
 
 function declOfNum(number, titles) {
   let cases = [2, 0, 1, 1, 1, 2];
@@ -13,10 +14,14 @@ const ProjectTags = ({ pageContext, data }) => {
 
   const { tag } = pageContext
 
-  // const tags = data.tags.group
+  const pageData = {
+    title: `Тег - ${tag}`,
+    description: `Записи с тегом - ${tag}`,
+  }
 
   return (
     <Layout>
+      <Seo pageTitle={pageData.title} pageDescription={pageData.description} />
       <AllTagList />
       <div className="tags">
         <div className="wrapper">
@@ -98,6 +103,4 @@ export const pageQuery = graphql`
     ) {
       totalCount
     }
-
-
   }`

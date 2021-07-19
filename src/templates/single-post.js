@@ -8,6 +8,7 @@ import Seo from "../components/Seo"
 import PrevNext from "../components/PrevNext"
 import kebabCase from "lodash/kebabCase"
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+import InfoMd from "../components/shortcodes/InfoMd"
 
 
 export const pageQuery = graphql`
@@ -20,21 +21,22 @@ query postQuery($id: String) {
       path
       title
       tags
+      description
     }
   }
 }
 `
 
-const shortcodes = { Link } // Provide common components here
+const shortcodes = { Link, InfoMd }
 
 const PageTemplate = ({ data: { mdx }, pageContext: { prev, next } }) => {
 
-  const {title, tags} = mdx.frontmatter
+  const { tags, title, description } = mdx.frontmatter
 
   deckDeckGoHighlightElement();
   return (
     <Layout>
-      <Seo />
+      <Seo pageTitle={title} pageDescription={description} />
       <div className="wrapper">
         <div className="post-info">
           <div className="post-info_item">

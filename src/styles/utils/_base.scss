@@ -68,14 +68,16 @@ body {
   flex: 1 0 auto;
   position: relative;
   z-index: 1;
-  // &.projects {
-  //   background-image: url("../images/projects-bg.svg");
-  //   background-size: 1000px;
-  // }
-  // &.notes {
-  //   background-image: url("../images/notes-bg.svg");
-  //   background-size: 700px;
-  // }
+  &.projects {
+    background-image: url("../images/projects-bg.svg");
+    // background-image: url("../images/circles-bg.svg");
+    // background-repeat: no-repeat;
+    background-size: 1000px;
+  }
+  &.notes {
+    background-image: url("../images/notes-bg.svg");
+    background-size: 700px;
+  }
   section:last-of-type {
     padding-bottom: var(--section-space);
   }

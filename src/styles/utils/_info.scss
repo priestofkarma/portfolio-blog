@@ -1,0 +1,20 @@
+.info_md {
+  padding: var(--gap);
+  background-color: var(--chakra-colors-blue-200);
+  border-radius: var(--border-radius);
+  font-size: var(--h5-font-size);
+  margin: 2rem 0;
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+  &_title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    svg {
+      color: var(--blue-50);
+      fill: currentcolor;
+      margin-right: 0.5rem;
+    }
+  }
+}
