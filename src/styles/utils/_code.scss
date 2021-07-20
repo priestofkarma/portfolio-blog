@@ -6,6 +6,7 @@ pre {
 
 pre[class*="language-"] {
   padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .gatsby-highlight pre[class*="language-"]::before {
@@ -19,7 +20,7 @@ pre[class*="language-"] {
   line-height: 1;
   padding: 0.25rem 0.5rem;
   position: absolute;
-  left: 4em;
+  left: 5em;
   text-shadow: none;
   font-weight: bold;
   text-align: right;
@@ -28,10 +29,18 @@ pre[class*="language-"] {
 }
 
 .gatsby-highlight {
+  .line-numbers-rows {
+    padding-top: 2em;
+    padding-left: 1em;
+  }
   pre {
     &.language-javascript::before,
     &.language-js::before {
       content: "js";
+      background: rgb(247, 223, 30);
+    }
+    &.language-bash::before, &.language-shell::before {
+      content: "bash";
       background: rgb(247, 223, 30);
     }
     &.language-jsx::before {

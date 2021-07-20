@@ -1,5 +1,5 @@
 .page-intro {
-  padding: var(--section-space) 0;
+  padding: calc(var(--section-space) / 2) 0;
   &_text {
     max-width: 65ch;
     font-weight: 400;

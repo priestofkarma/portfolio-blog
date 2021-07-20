@@ -1,14 +1,37 @@
+.content {
+  // font-size: 1.125rem;
+  h1,
+  h2,
+  h3,
+  .h1,
+  .h2,
+  .h3 {
+    border-bottom: 1px solid var(--gray-30);
+    padding-bottom: 0.3em;
+  }
+}
 .gatsby-resp-image-wrapper,
 img {
   display: inline-block;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lg);
-  margin-bottom: 3rem;
+  margin-bottom: 1em;
 }
 .gatsby-resp-image-link {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+}
+
+figure {
+  margin: 1em 0;
+  figcaption {
+    text-align: center;
+    color: var(--gray-400);
+  }
+  img {
+    margin-bottom: 0;
+  }
 }
 
 blockquote {
@@ -17,6 +40,7 @@ blockquote {
   padding: 0.5rem 0 0.5rem 3rem;
   border-left: 2px solid #202224;
 }
+
 summary.button {
   display: inline-flex;
   position: relative;
@@ -32,14 +56,18 @@ details[open] {
       content: "▼";
     }
   }
+  summary {
+    margin-bottom: 1rem;
+  }
+}
+
+summary.button {
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  height: auto;
 }
 
 details {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   margin-bottom: 1em;
   .gatsby-resp-image-wrapper {
     margin-bottom: 0;
@@ -50,18 +78,12 @@ details {
   }
 }
 
-details[open] {
-  summary {
-    margin-bottom: 1rem;
-  }
-}
-
-details p:nth-of-type(1) {
-  margin-top: 0;
-}
-details p:last-child {
-  margin-bottom: 0;
-}
+// details p:nth-of-type(1) {
+//   margin-top: 0;
+// }
+// details p:last-child {
+//   margin-bottom: 0;
+// }
 
 .table-wrap {
   margin: 2rem 0;
@@ -71,11 +93,11 @@ details p:last-child {
   }
 }
 
-@media only screen and (max-width: 576px) {
-  blockquote {
-    margin: 2rem 0;
-    padding: 0.5rem 0 0.5rem 1.5rem;
-  }
+hr {
+  background-color: var(--gray-30);
+  color: var(--gray-30);
+  height: 1px;
+  border: none;
 }
 
 iframe,
@@ -87,4 +109,11 @@ video {
 .gatsby-resp-image-wrapper {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lg);
+}
+
+@media only screen and (max-width: 576px) {
+  blockquote {
+    margin: 2rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+  }
 }
