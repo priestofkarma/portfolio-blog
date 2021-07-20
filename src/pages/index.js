@@ -61,24 +61,24 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo pageTitle="Веб-разработчик" />
+      <Seo/>
 
       <section className="hero-section" >
         
         <div className="particles" >
-          <svg data-depth="0.10" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-depth="0.2" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 34C0 27.54 27.54 0 34 0C40.46 0 68 27.54 68 34C68 40.46 40.46 68 34 68C27.54 68 0 40.46 0 34Z" fill="#74C69D"/>
           </svg>
-          <svg data-depth="0.05" width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-depth="0.1" width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.77372 48.3952C0.47416 15.9868 2.43934 13.0733 34.8478 6.7737C67.2562 0.474146 70.1697 2.43933 76.4692 34.8477C82.7688 67.2562 80.8036 70.1697 48.3952 76.4692C15.9868 82.7688 13.0733 80.8036 6.77372 48.3952Z" fill="#FADB5F"/>
           </svg>
-          <svg data-depth="0.16" width="145" height="145" viewBox="0 0 145 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-depth="0.25" width="145" height="145" viewBox="0 0 145 145" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.9575 55.4657C20.5186 43.8179 77.7329 13.3965 89.3807 16.9576C101.029 20.5186 131.45 77.733 127.889 89.3808C124.328 101.029 67.1134 131.45 55.4656 127.889C43.8178 124.328 13.3964 67.1135 16.9575 55.4657Z" fill="#7242F8"/>
           </svg>
-          <svg data-depth="0.20" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-depth="0.36" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46.1399 11.2325C48.8509 11.6631 71.9076 43.429 71.4769 46.14C71.0463 48.851 39.2804 71.9077 36.5694 71.477C33.8584 71.0463 10.8017 39.2805 11.2324 36.5694C11.6631 33.8584 43.4289 10.8018 46.1399 11.2325Z" fill="#1085FA"/>
           </svg>
-          <svg data-depth="0.09" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-depth="0.14" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M21.3646 28.3516C42.729 0 42.729 0 71.0806 21.3644C99.4321 42.7289 99.4321 42.7289 78.0677 71.0804C56.7033 99.432 56.7033 99.432 28.3517 78.0676C0.00013572 56.7031 0.00013572 56.7031 21.3646 28.3516Z" fill="#F34F63"/>
           </svg>
 
