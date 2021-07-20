@@ -79,7 +79,7 @@ export default function PageTemplate({ data: { mdx }, pageContext: { prev, next 
             {instruments && (
               <div className="post-info_item">
                 <details>
-                  <summary className="h5">Инструментарий:</summary>
+                  <summary>Инструментарий:</summary>
 
                   <ul>
                     {instruments.map((item, index) => (
@@ -101,13 +101,13 @@ export default function PageTemplate({ data: { mdx }, pageContext: { prev, next 
       <div className="wrapper">
 
 
-        <div className="content">
+        <article className="content">
 
           <MDXProvider components={shortcodes}>
             <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
           </MDXProvider>
 
-        </div>
+        </article>
 
         <PrevNext prev={prev} next={next} postType="работа" />
 
