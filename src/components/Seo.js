@@ -27,12 +27,12 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
 
 
   const seo = {
-    title: pageTitle || title,
+    title: pageTitle,
     description: pageDescription || description,
-    image: `${ siteUrl }${ pageImage || image }`,
+    image: `${siteUrl}${pageImage || image}`,
   }
 
-  const concatTitle = `${seo.title} | ${ title } `;
+  const concatTitle = `${seo.title ? `${seo.title} |` : ""} ${title} `;
 
   return (
     <Helmet htmlAttribute={{ lang: "ru" }} title={concatTitle}>
@@ -45,10 +45,10 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
       <meta property="og:description" content={seo.description} />
       {/* Twitter Card */}
       {/* images start */}
-      <meta property="og:image" content={ seo.image } />
+      <meta property="og:image" content={seo.image} />
       <meta property="og:image:height" content="300" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={ seo.image }/>
+      <meta name="twitter:image" content={seo.image} />
       {/* images end */}
 
       <meta name="twitter:title" content={concatTitle} />
