@@ -35,7 +35,8 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
   const concatTitle = `${seo.title ? `${seo.title} |` : ""} ${title} `;
 
   return (
-    <Helmet htmlAttribute={{ lang: "ru" }} title={concatTitle}>
+    <Helmet title={concatTitle}>
+      <html lang="ru" amp />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {/* Facebook Card */}

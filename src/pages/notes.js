@@ -8,7 +8,7 @@ import TagList from '../components/TagList'
 
 const postsQuery = graphql`
  query {
-    allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}) {
+    allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           id

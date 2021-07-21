@@ -29,7 +29,7 @@ const postsQuery = graphql`
         }
       }
     }
-    notes: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}},  limit: $limitBlog) {
+    notes: allMdx(filter: {fileAbsolutePath: {regex: "/content/notes/"}},  limit: $limitBlog, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           id
@@ -104,8 +104,6 @@ const IndexPage = () => {
               </ul>
           </div>
         </div>
-        {/* <svg id="visual" className="pic"  viewBox="0 0 900 600" width="900" height="600" ><rect x="0" y="0" width="900" height="600" fill="#f9f9f9"></rect><defs><linearGradient id="grad1_0" x1="33.3%" y1="100%" x2="100%" y2="0%"><stop offset="20%" stop-color="#f9f9f9" stop-opacity="1"></stop><stop offset="80%" stop-color="#f9f9f9" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="100%" x2="66.7%" y2="0%"><stop offset="20%" stop-color="#f9f9f9" stop-opacity="1"></stop><stop offset="80%" stop-color="#f9f9f9" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(900, 600)"><path d="M-324.5 0C-314.1 -39.5 -303.6 -79 -290.1 -120.2C-276.6 -161.3 -259.9 -204.2 -229.5 -229.5C-199 -254.7 -154.6 -262.4 -114 -275.3C-73.5 -288.2 -36.7 -306.4 0 -324.5L0 0Z" fill="#1085fa"></path></g><g transform="translate(0, 0)"><path d="M324.5 0C309.6 38.5 294.8 76.9 280.9 116.3C267 155.7 254 196.1 228.4 228.4C202.7 260.7 164.4 285.1 124.2 299.8C84 314.5 42 319.5 0 324.5L0 0Z" fill="#1085fa"></path></g></svg> */}
-          {/* <svg viewBox="0 0 30 30" className="pic-1 pic"><path d="M15,30A15,15,0,1,1,30,15,15,15,0,0,1,15,30ZM15,6.23A8.77,8.77,0,1,0,23.77,15,8.77,8.77,0,0,0,15,6.23Z"></path></svg> */}
       </section>
 
       <section className="about-section">

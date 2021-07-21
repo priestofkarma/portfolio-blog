@@ -12,7 +12,6 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "@pauliescanlon/gatsby-mdx-embed",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -117,5 +116,6 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };

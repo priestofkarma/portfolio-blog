@@ -1,4 +1,13 @@
 import React, { useEffect } from 'react'
+import "@fontsource/open-sans/300.css";
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/600.css";
+import "@fontsource/open-sans/700.css";
+import "@fontsource/merriweather/400.css";
+import "@fontsource/merriweather/700.css";
+import "@fontsource/merriweather/900.css";
+import "@fontsource/source-code-pro/300.css";
+import "@fontsource/source-code-pro/400.css";
 import Header from './Header'
 import Footer from './Footer'
 import '../styles/main.scss'
@@ -29,14 +38,13 @@ const Layout = ({ clazzName, children }) => {
 
   return (
     <>
-      {/* <Seo pageTitle={pageConcatTitle} /> */}
       <Header />
 
       <main className={`page_container ${clazzName ? clazzName : ''}`}>
         {children}
 
       </main>
-
+      
       <div className="scroll-up">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.004 492.004">
           <path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
@@ -46,7 +54,6 @@ const Layout = ({ clazzName, children }) => {
               l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
         </svg>
       </div>
-
 
       <Footer />
     </>
