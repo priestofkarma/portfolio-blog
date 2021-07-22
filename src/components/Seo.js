@@ -1,13 +1,13 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import me from '../images/me.jpg'
 
 const siteData = graphql`
   query {
     site {
       siteMetadata {
         description
-        image
         siteUrl
         title
       }
@@ -21,7 +21,6 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
   const {
     title,
     description,
-    image,
     siteUrl,
   } = site.siteMetadata;
 
@@ -29,7 +28,7 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
   const seo = {
     title: pageTitle,
     description: pageDescription || description,
-    image: `${siteUrl}${pageImage || image}`,
+    image: `${siteUrl}/${pageImage || me}`,
   }
 
   const concatTitle = `${seo.title ? `${seo.title} |` : ""} ${title} `;

@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "http://www.webofkarma.com",
     title: "Женя Петренко",
-    description: "Портфолио веб-разработчика, фрилансера и просто хорошего парня.",
-    image: "src/images/me.jpg",
+    description: "Разработка сайтов, вёрстка, портфолио веб-разработчика",
   },
   plugins: [
     "gatsby-plugin-sass",
