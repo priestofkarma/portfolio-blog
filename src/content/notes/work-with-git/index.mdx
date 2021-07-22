@@ -1,0 +1,56 @@
+---
+title: Работа с Git. Основные комманды.
+description: Git — мощная и сложная распределенная система контроля версий.
+path: /notes/work-with-git
+date: 2021-07-20
+tags: ["Git"]
+---
+
+[Git How To: курс обучения Git на русском](https://githowto.com/ru)
+
+### Инициализация и пуш на сервер
+
+```bash
+// Инициализировать репозиторий
+git init
+
+// Локальный конфиг для репозитория
+// Для глобального конфига прописать флаг --global
+git config --local user.name "Zhenya"
+git config --local user.email "email@gmail.com"
+
+// Проверка статуса
+git status
+
+// Добавить ВСЕ файлы в индекс
+git add -A // добавляет все файлы в индекс
+
+// Сделать коммит
+git commit -a -m"first commit" // (-a) добавляет коммит для всех файлов
+
+// Проверить логи проекта
+git log
+
+// Запушить изменения
+git push
+
+// Связать локальный репозиторий с гитом на сервере
+git remote add origin "https://github.com/preistofkarma/reponame.git"
+// Выбрать ветку main (перевеименовать ветку master на main)
+git branch -M main
+// Запушить изменения 
+git push -u origin main // флаг -u значит что все последующие пуши будут отпралятся в main
+```
+
+### Клонирование репозитория
+
+```bash
+// Клонирование репозитория в папку reponame
+git clone https://github.com/preistofkarma/reponame.git reponame
+
+// Получить изменения из удаленного сервера
+git pull
+
+// Изменить ссылку на репозиторий для пуша
+git remote set-url origin https://github.com/preistofkarma/reponame.git
+```

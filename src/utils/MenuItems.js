@@ -31,18 +31,3 @@ export const socialMenuItems = [
   },
 
 ]
-
-// export const mainMenuItems = [
-//   {
-//     path: "/projects",
-//     title: "проекты",
-//   },
-//   {
-//     path: "/blog",
-//     title: "Блог",
-//   },
-//   {
-//     path: "/about",
-//     title: "Обо мне",
-//   },
-// ]

@@ -54,7 +54,7 @@ const Footer = () => {
               <p className="first-link">Соцсети</p>
               <ul className="footer-menu_list">
                 {socialMenuItems.map((item, index) => (
-                  <li key={`footerSocialItems-${index}`}><a href={item.url} target="_blank" rel="noreferrer">{item.name}</a></li>
+                  <li key={`footerSocialItems-${index}`}><a href={item.url} target="_blank" rel="noreferrer" title={item.name}>{item.name}</a></li>
                 ))}
               </ul>
             </div>

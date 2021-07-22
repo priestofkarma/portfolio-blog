@@ -39,7 +39,7 @@ const ProjectTags = ({ pageContext, data }) => {
               title={`${data.notes.totalCount} ${declOfNum(data.notes.totalCount, ['заметка', 'заметки', 'заметок'])} с тегом "${tag}"`}
               postType="notes"
               query={data.notes}
-              linkText="Все проекты"
+              linkText="Все заметки"
             />
           )}
         </div>

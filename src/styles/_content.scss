@@ -42,20 +42,20 @@ blockquote {
 }
 
 summary.button {
-  display: inline-flex;
+  // display: inline-flex;
   position: relative;
-  &:before {
-    margin-right: 0.5em;
-    content: "▶";
-  }
+  // &:before {
+  //   margin-right: 0.5em;
+  //   content: "▶";
+  // }
 }
 
 details[open] {
-  summary.button {
-    &:before {
-      content: "▼";
-    }
-  }
+  // summary.button {
+  //   &:before {
+  //     content: "▼";
+  //   }
+  // }
   summary {
     margin-bottom: 1rem;
   }

@@ -14,7 +14,7 @@ const ProjectsListItem = ({ nodeObj, postType, cardGradient }) => {
 
   return (
     <li>
-      <Link to={path} className={`list-item ${cardGradient ? `card-gradient-${cardGradient}` : ""}`}>
+      <Link to={path} title={description} className={`list-item ${cardGradient ? `card-gradient-${cardGradient}` : ""}`}>
         {tags && (<div className="tag-list">
           {tags.map((tag, i) => (
             <span className={`tag-list_item ${rndColors.getRndColor(tag)}`} key={`${postType}-tag${i}`}>{tag}</span>

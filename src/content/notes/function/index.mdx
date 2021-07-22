@@ -1,0 +1,92 @@
+---
+title: Функции, callback-фукнции
+description: Заметки по курсу JavaScript и React.
+path: /notes/function
+date: 2021-07-19
+tags: ["JavaScript"]
+---
+
+[Функции](https://learn.javascript.ru/function-basics)
+
+### Создание функций
+
+![Создание функций](functions.jpg)
+
+---
+
+```jsx
+// Создать функцию (function declaration)
+function functionName(param) {
+ // ...body of function...
+}
+
+// Вызвать функцию
+functionName('paramName');
+
+// Возврат значения из функции
+function functionName(param) {
+  // ...body of function...
+	let num = param;
+	return num;
+  // код после return не выполняется
+}
+
+// function expression
+// Создается только тогда, когда до неё доходит код
+let foo = function() {
+	...some code...
+}
+
+foo();
+
+// Стрелочные функции
+const calc = (a, b) => a + b;
+```
+
+### Замыкание функций
+
+[Я никогда не понимал замыкания в JavaScript](https://medium.com/nuances-of-programming/я-никогда-не-понимал-замыкания-в-javascript-часть-первая-3c3f02041970)
+
+[Замыкание](https://learn.javascript.ru/closure)
+
+### Callback-функции
+
+```jsx
+function first() {
+    // Do something
+    // Эмулируем задержку (ответ от сервера и т.д.)
+    setTimeout(function () {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    // Do something
+    console.log(2);
+}
+
+first();
+second();
+
+/* 
+	console:
+	2
+  1
+ */
+
+function learnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log("Я прошел этот урок!");
+}
+
+learnJS("JavaScript", done);
+
+/*
+ * Я учу: JavaScript
+ * Я прошел этот урок!
+ */
+```

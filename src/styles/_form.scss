@@ -143,7 +143,7 @@ button, a.button, summary.button {
 
 summary.button,
 a.button {
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 1.5rem;
   height: auto;
 }
 
@@ -266,6 +266,9 @@ fieldset {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .label-inline {

@@ -40,6 +40,7 @@ const Header = () => {
             <ul>
               <li><Link to="/projects" onClick={toggleNav}>Проекты</Link></li>
               <li><Link to="/notes" onClick={toggleNav}>Заметочки</Link></li>
+              <li><Link to="/notes/instruments" onClick={toggleNav}>Инструменты</Link></li>
               <li><Link to="/about" onClick={toggleNav}>Обо мне</Link></li>
             </ul>
           </nav>
