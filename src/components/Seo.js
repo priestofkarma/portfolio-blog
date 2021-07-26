@@ -28,7 +28,7 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
   const seo = {
     title: pageTitle,
     description: pageDescription || description,
-    image: `${siteUrl}/${pageImage || me}`,
+    image: `${siteUrl}${pageImage || me}`,
   }
 
   const concatTitle = `${seo.title ? `${seo.title} |` : ""} ${title} `;
