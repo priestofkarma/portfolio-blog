@@ -1,0 +1,2 @@
+(self.webpackChunkportfolio_blog=self.webpackChunkportfolio_blog||[]).push([[7159],{1973:function(e,t,l){"use strict";l.r(t);var n=l(7294),o=l(9044),r=l(3790),u=l(1633);t.default=function(){return n.createElement(o.Z,null,n.createElement(u.Z,{pageTitle:"Список тегов",pageDescription:"Список тегов"}),n.createElement(r.Z,null))}}}]);
+//# sourceMappingURL=component---src-pages-tags-js-7bb8670c2cdce28331bb.js.map
