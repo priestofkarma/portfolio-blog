@@ -88,11 +88,9 @@ const IndexPage = () => {
 						<h1 className="hero-title">Привет, я Женя <span>👋</span></h1>
 						<div className="hero-description">
 							<p><strong>Веб-разработчик</strong> маминой подруги, в основном работаю в аутсорсе.
-								<strong>Делаю добротные сайты</strong> и натягиваю на <b>Wordpress :)</b>
+								<strong> Делаю добротные сайты</strong> и натягиваю на <b>Wordpress :)</b>
 							</p>
-							<p>В настоящее время доступен для найма,
-								не стесняйтесь связаться со мной,
-								чтобы обсудить детали Вашего проекта.</p>
+							<p>В настоящее время доступен для найма, не стесняйтесь связаться со мной, чтобы обсудить детали Вашего проекта.</p>
 						</div>
 						<AnchorLink to="/about#write-me" className="button" stripHash={true} title="Напишите мне!">Cвязаться со мной</AnchorLink>
 						<ul className="soc-links">
@@ -121,14 +119,14 @@ const IndexPage = () => {
 							</ul>
 						</div>
 						<div className="about-section_text">
-							<p>Мне просто нравится сайты, дизайн, технологии и всё что с этим связано.</p>
+							<p>Мне просто нравятся сайты, дизайн, технологии и всё что с этим связано.</p>
 							<h4>Мои услуги включают в себя:</h4>
 							<ul>
 								<li>Вёрстка сайтов
 									<ul>
 										<li>на <a href="https://tilda.cc" target="_blank" rel="noreferrer">Tilda</a>, лендинги на <a href="https://zero.tilda.cc/ru" target="_blank" rel="noreferrer">Zero
 											Block</a></li>
-										<li>на <a href="https://elementor.com" target="_blank" rel="noreferrer">Elementor</a> под WordPress</li>
+										<li>на <a href="https://elementor.com" target="_blank" rel="noreferrer">Elementor</a> на WordPress</li>
 										<li>чуть-чуть <a href="https://getcourse.ru" target="_blank" rel="noreferrer">GetCourse</a></li>
 									</ul>
 								</li>
