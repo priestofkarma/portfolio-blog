@@ -1,7 +1,6 @@
 /* Medium Devices, Desktops */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1199px) {
   :root {
-    --wrapper: 730px;
     --gap: 15px;
   }
 }
@@ -20,7 +19,7 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   :root {
-    --wrapper: 520px;
+    --wrapper: 640px;
     // sizes
     --section-space: 50px;
     --cardHeight: 170px;

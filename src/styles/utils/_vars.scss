@@ -13,7 +13,7 @@
 
   // sizes
   --header-height: 60px;
-  --wrapper: 980px;
+  --wrapper: 1240px;
   --section-space: 80px;
   --gap: 30px;
   --cardHeight: 250px;
@@ -78,6 +78,7 @@
   --wedding-day: linear-gradient(to top, #ff0080, #ff8c00, #40e0d0);
   --pun-yeta: linear-gradient(to top, #ef8e38, #108dc7);
   --apple-dark: radial-gradient(circle, #2e1d7d 0%, #050939 80%);
+  --apple-dark-linear: linear-gradient(to bottom, #2e1d7d 0%, #050939 100%);
 
   // box-shadow
   --shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);

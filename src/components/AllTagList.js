@@ -19,7 +19,7 @@ const AllTagList = () => {
   const tags = tagsQuery.allMdx.group
 
   return (
-    <div className="tags-section " >
+    <div className="tags-section">
       <div className="wrapper">
         <h3>Теги</h3>
         <div className="overflow-x-block">
