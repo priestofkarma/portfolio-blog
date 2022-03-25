@@ -1,60 +1,60 @@
 ---
-title: Функции, callback-фукнции
-description: Заметки по курсу JavaScript и React.
+title: Функції, callback-функції
+description: Нотатки по курсу JavaScript и React.
 path: /notes/function
 date: 2021-07-19
 tags: ["JavaScript"]
 ---
 
-[Функции](https://learn.javascript.ru/function-basics)
+[Функції](https://learn.javascript.ru/function-basics)
 
-### Создание функций
+### Створення функцій
 
-![Создание функций](functions.jpg)
+![Створення функцій](functions.jpg)
 
 ---
 
 ```jsx
-// Создать функцию (function declaration)
+// Створити функцію (function declaration)
 function functionName(param) {
  // ...body of function...
 }
 
-// Вызвать функцию
+// Викликати функцію
 functionName('paramName');
 
-// Возврат значения из функции
+// Повернення значення функції
 function functionName(param) {
   // ...body of function...
 	let num = param;
 	return num;
-  // код после return не выполняется
+  // код після return не виконується
 }
 
 // function expression
-// Создается только тогда, когда до неё доходит код
+// Створюється лише тоді, коли до неї доходить код
 let foo = function() {
 	...some code...
 }
 
 foo();
 
-// Стрелочные функции
+// Стрілочні функції
 const calc = (a, b) => a + b;
 ```
 
-### Замыкание функций
+### Замикання функцій
 
-[Я никогда не понимал замыкания в JavaScript](https://medium.com/nuances-of-programming/я-никогда-не-понимал-замыкания-в-javascript-часть-первая-3c3f02041970)
+[Я ніколи не розумів замикання JavaScript](https://medium.com/nuances-of-programming/я-никогда-не-понимал-замыкания-в-javascript-часть-первая-3c3f02041970)
 
-[Замыкание](https://learn.javascript.ru/closure)
+[Замикання](https://learn.javascript.ru/closure)
 
-### Callback-функции
+### Callback-функції
 
 ```jsx
 function first() {
     // Do something
-    // Эмулируем задержку (ответ от сервера и т.д.)
+    // Емулюємо затримку (відповідь від сервера тощо)
     setTimeout(function () {
         console.log(1);
     }, 500);
@@ -71,7 +71,7 @@ second();
 /* 
 	console:
 	2
-  1
+  	1
  */
 
 function learnJS(lang, callback) {
@@ -80,13 +80,13 @@ function learnJS(lang, callback) {
 }
 
 function done() {
-    console.log("Я прошел этот урок!");
+    console.log("Я пройшов цей урок!");
 }
 
 learnJS("JavaScript", done);
 
 /*
- * Я учу: JavaScript
- * Я прошел этот урок!
+ * Я вчу: JavaScript
+ * Я пройшов цей урок!
  */
 ```

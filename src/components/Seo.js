@@ -35,7 +35,7 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
 
 	return (
 		<Helmet title={concatTitle}>
-			<html lang="ru" amp />
+			<html lang="uk-UA" amp />
 			<meta name="description" content={seo.description} />
 			<meta name="image" content={seo.image} />
 			{/* Facebook Card */}
@@ -50,7 +50,6 @@ const SEO = ({ pageTitle, pageDescription, pageImage }) => {
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:image" content={seo.image} />
 			{/* images end */}
-
 			<meta name="twitter:title" content={concatTitle} />
 			<meta name="twitter:description" content={seo.description} />
 			<meta name='freelancehunt' content='6ef94c07fba183c' />

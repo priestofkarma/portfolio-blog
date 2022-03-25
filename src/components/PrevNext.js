@@ -7,13 +7,13 @@ const PrevNext = ({ prev, next, postType }) => {
     <div className="prev-next-container">
       {prev && (
         <Link className="prev" to={prev.node.frontmatter.path}>
-          <span>Предыдущая {postType}</span>
+          <span>Попередня {postType}</span>
           <p>{prev.node.frontmatter.title}</p>
         </Link>
       )}
       {next && (
         <Link className="next" to={next.node.frontmatter.path}>
-          <span>Следующая {postType}</span>
+          <span>Наступна {postType}</span>
           <p>{next.node.frontmatter.title}</p>
         </Link>
       )}

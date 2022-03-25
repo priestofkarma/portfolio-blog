@@ -1,35 +1,35 @@
 ---
-title: Динамическая типизация
-description: Заметки по курсу JavaScript и React.
+title: Динамічна типізація
+description: Нотатки з курсу JavaScript та React.
 path: /notes/dynamic-typing
 date: 2021-07-19
 tags: ["JavaScript"]
 ---
 
-### Перевод в строку
+### Переклад у рядок
 
 ```jsx
 // To string
 console.log(String(null)); // "null" - строка
 console.log(String(4)); // "4" - строка
 
-// Все, что конкатинируем со строкой - тип данных строка
-console.log(typeof (5 + "")); // тип данных - string
+// Все, що конкатинуємо з рядком - тип даних рядок
+console.log(typeof (5 + "")); // тип даних - string
 
 const num = 5;
 
-console.log("https://vk.com/catalog/" + num); // https://vk.com/catalog/5
+console.log("https://facebook.com/catalog/" + num); // https://facebook.com/catalog/5
 
 const fontSize = 26 + "px"; // 26px
 ```
 
-### Перевод в числовой тип данных
+### Переведення в числовий тип даних
 
 ```jsx
 // To number
 console.log(typeof Number("4")); // number
 
-// Унарный плюс
+// Унарний плюс
 typeof +"5"; // number
 
 // parseInt
@@ -38,7 +38,7 @@ typeof parseInt("15px", 10);
 let answ = +prompt("Hello", "");
 ```
 
-### Перевод чего-либо в булевое значение
+### Переклад чогось у булеве значення
 
 ```jsx
 // To false
@@ -58,5 +58,5 @@ if(switcher) { // true
 
 typeof(Boolean('4')); // boolean
 
-(!!'312313') // два знака отрицания перед чем либо, превращают в boolean
+(!!'312313') // два знаки заперечення перед чимось, перетворюють на boolean
 ```

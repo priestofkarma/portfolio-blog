@@ -37,41 +37,41 @@ const postsQuery = graphql`
 
 const ProjectsPage = () => {
 
-  const [tagName, setTagName] = useState('')
+	const [tagName, setTagName] = useState('')
 
-  function setTag(tag) {
-    setTagName(tagName => tag)
-  }
+	function setTag(tag) {
+		setTagName(tagName => tag)
+	}
 
-  const posts = useStaticQuery(postsQuery)
+	const posts = useStaticQuery(postsQuery)
 
-  const tags = posts.allMdx.group
+	const tags = posts.allMdx.group
 
-  const pageData = {
-    title: "Мои проекты",
-    description: "Проекты и задачи, над которыми я работал.",
-  }
+	const pageData = {
+		title: "Мої проєкти",
+		description: "Проєкти і задачі, над якими я працював",
+	}
 
-  return (
-    <Layout clazzName="projects">
-      <Seo pageTitle={pageData.title} pageDescription={pageData.title} />
-      <PageIntro
-        bgColor={pageData.color}
-        pageTitle={pageData.title}
-        text="Проекты и задачи, над которыми я работал. Это не все работы, большинство проектов по договору не могу показать в портфолио."
-      ></PageIntro>
-      <div className="posts-list-wrapper">
-        <div className="wrapper">
+	return (
+		<Layout clazzName="projects">
+			<Seo pageTitle={pageData.title} pageDescription={pageData.title} />
+			<PageIntro
+				bgColor={pageData.color}
+				pageTitle={pageData.title}
+				text="Проєкти та завдання, над якими я працював. Це не всі роботи, більшість проєктів за договором не можу показати у портфоліо."
+			></PageIntro>
+			<div className="posts-list-wrapper">
+				<div className="wrapper">
 
-          <TagList query={tags} onTagChange={setTag} />
+					<TagList query={tags} onTagChange={setTag} />
 
-          <PostList postType="projects" tagNameFilter={tagName} query={posts.allMdx} linkText="Все заметки" />
+					<PostList postType="projects" tagNameFilter={tagName} query={posts.allMdx} linkText="Всі нотатки" />
 
-        </div>
-      </div>
+				</div>
+			</div>
 
-    </Layout>
-  )
+		</Layout>
+	)
 }
 
 export default ProjectsPage

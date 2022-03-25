@@ -1,6 +1,6 @@
 ---
-title: Скрипты и время их выполнения, setTimeout(), setInterval()
-description: Заметки по курсу JavaScript и React.
+title: Скрипти та час їх виконання, setTimeout(), setInterval()
+description: Нотатки з курсу JavaScript та React.
 path: /notes/timeout-interval
 date: 2021-07-20
 tags: ["JavaScript"]
@@ -9,33 +9,33 @@ tags: ["JavaScript"]
 ### setTimeout, setInterval, clearInterval
 
 ```jsx
-/* через 2000 мс запустится функция console.log */
+/* через 2000 мс запуститься функція console.log */
 const timer = setTimeout(() => {
     console.log("hello!");
 }, 2000);
 
-/* каждых 1000 мс запустится ананоминая функция с console.log('tick!'); */
+/* кожних 1000 мс запуститься ананомінна функція з console.log('tick!'); */
 const timerId = setInterval(() => {
     console.log("tick!");
 }, 1000);
 
-/* остановить выполнение таймера */
+/* зупинити виконання таймера */
 clearInterval(timerId);
 ```
 
-### Рекурсивный вызов setTimeout
+### Рекурсивний виклик setTimeout
 
 ```jsx
-/* через 2000 мс запустится функция console.log */
+/* через 2000 мс запуститься функція console.log */
 let id = setTimeout(function log() {
     console.log("hello!");
     id = setTimeout(log, 500);
 }, 500);
 ```
 
-[JavaScript-анимации](https://learn.javascript.ru/js-animation)
+[JavaScript-анімації](https://learn.javascript.ru/js-animation)
 
-### Анимация с помощью setInterval
+### Анімація за допомогою setInterval
 
 ```jsx
 function myAnimation() {

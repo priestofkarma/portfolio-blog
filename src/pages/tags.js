@@ -7,7 +7,7 @@ const TagsPage = () => {
   
   return (
     <Layout>
-      <Seo pageTitle="Список тегов" pageDescription="Список тегов" />
+      <Seo pageTitle="Список тегів" pageDescription="Список тегів" />
       <AllTagList/>
     </Layout>
   )

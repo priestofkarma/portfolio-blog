@@ -1,6 +1,6 @@
 ---
-title: Методы и свойства строк и чисел
-description: Заметки по курсу JavaScript и React.
+title: Методи та властивості рядків та чисел
+description: Нотатки з курсу JavaScript та React.
 path: /notes/string
 date: 2021-07-17
 tags: ["JavaScript"]
@@ -8,12 +8,12 @@ tags: ["JavaScript"]
 
 [String - JavaScript | MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-[Строки](https://learn.javascript.ru/string)
+[Рядки](https://learn.javascript.ru/string)
 
-### Свойства
+### Властивості
 
 ```jsx
-//Свойство length
+//Властивість length
 const str = "test";
 str.length // 4
 
@@ -21,32 +21,32 @@ const arr = [1, 2, 3];
 arr.length // 3
 ```
 
-### Методы строк
+### Методи рядків
 
 ```jsx
-//Свойство length
+//Властивість length
 const str = "test";
 
 str.toUpperCase(); // TEST
 str.toLowerCase(); // test
 
-consoloe.log(str) // test (значение остается)
+consoloe.log(str) // test (значення залишається)
 
 // --------------------------
 
 const fruit = "Some fruit";
 
 fruit.indexOf("fruit"); // 5
-fruit.indexOf("q"); // -1 не найдено
+fruit.indexOf("q"); // -1 не знайдено
 
 // --------------------------
 
 const logg = "Hello World";
-console.log(logg.slice(6, 10)); // Worl (обрезает с 6-го символа до 10 не влючительно)
-console.log(logg.slice(6)); // World (обрезает всю строку начиная с 6-го символа)
-console.log(logg.slice(-5, -1)); // Worl (обрезает всю строку начиная с 5 символа считая с конца до предпоследнего символа)
-console.log(logg.substring(6, 11)); // не поддерживает орицательные значения (-6) = 0
-console.log(logg.substr(4, 3)); // o W (начиная с 4-го символа вырезать 3 следющих символа)
+console.log(logg.slice(6, 10)); // Worl (обрізає з 6-го символу до 10 не влучно)
+console.log(logg.slice(6)); // World (обрізає весь рядок, починаючи з 6-го символу)
+console.log(logg.slice(-5, -1)); // Worl (обрізає весь рядок починаючи з 5 символу, рахуючи з кінця до передостаннього символу)
+console.log(logg.substring(6, 11)); // не підтримує орієнтовні значення (-6) = 0
+console.log(logg.substr(4, 3)); // o W (починаючи з 4-го символу вирізати 3 наступні символи)
 ```
 
 ---
@@ -55,7 +55,7 @@ console.log(logg.substr(4, 3)); // o W (начиная с 4-го символа 
 
 [Числа](https://learn.javascript.ru/number)
 
-### Методы чисел
+### Методи чисел
 
 ```jsx
 const num = 12.2;

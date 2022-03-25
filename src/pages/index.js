@@ -85,14 +85,14 @@ const IndexPage = () => {
 
 				<div className="wrapper">
 					<div className="hero-section_wrapper">
-						<h1 className="hero-title">Привет, я Женя <span>👋</span></h1>
+						<h1 className="hero-title">Привіт, я Женя <span>👋</span></h1>
 						<div className="hero-description">
-							<p><strong>Веб-разработчик</strong> маминой подруги, в основном работаю в аутсорсе.
-								<strong> Делаю добротные сайты</strong> и натягиваю на <b>Wordpress :)</b>
+							<p><strong>Веб-розробник</strong> маминої подруги, зазвичай працюю в аутсорсі.
+								{/* <strong> Роблю добротні сайти</strong> и натягиваю на <b>Wordpress :)</b> */}
 							</p>
-							<p>В настоящее время доступен для найма, не стесняйтесь связаться со мной, чтобы обсудить детали Вашего проекта.</p>
+							<p>В даний час доступний для найму, не соромтеся зв'язатися зі мною, щоб обговорити деталі Вашого проекту.</p>
 						</div>
-						<AnchorLink to="/about#write-me" className="button" stripHash={true} title="Напишите мне!">Cвязаться со мной</AnchorLink>
+						<AnchorLink to="/about#write-me" className="button" stripHash={true} title="Напишіть мені!">Зв'язатися зі мною</AnchorLink>
 						<ul className="soc-links">
 							{socialMenuItems && socialMenuItems.map((item, index) => (
 								<li key={`socialitems-${index}`}><a href={item.url} target="_blank" rel="noreferrer">{item.icon}</a></li>
@@ -119,24 +119,24 @@ const IndexPage = () => {
 							</ul>
 						</div>
 						<div className="about-section_text">
-							<p>Мне просто нравятся сайты, дизайн, технологии и всё что с этим связано.</p>
-							<h4>Мои услуги включают в себя:</h4>
+							<p>Мені просто подобаються сайти, дизайн, технології та все, що з цим пов'язано.</p>
+							<h4>Мої послуги:</h4>
 							<ul>
-								<li>Вёрстка сайтов
+								<li>Верстка сайтів
 									<ul>
-										<li>на <a href="https://tilda.cc" target="_blank" rel="noreferrer">Tilda</a>, лендинги на <a href="https://zero.tilda.cc/ru" target="_blank" rel="noreferrer">Zero
+										<li>на <a href="https://tilda.cc" target="_blank" rel="noreferrer">Tilda</a>, лендінги на <a href="https://zero.tilda.cc/ru" target="_blank" rel="noreferrer">Zero
 											Block</a></li>
 										<li>на <a href="https://elementor.com" target="_blank" rel="noreferrer">Elementor</a> на WordPress</li>
-										<li>чуть-чуть <a href="https://getcourse.ru" target="_blank" rel="noreferrer">GetCourse</a></li>
+										<li>трохи <a href="https://getcourse.ru" target="_blank" rel="noreferrer">GetCourse</a></li>
 									</ul>
 								</li>
-								<li>Натяжка вёрстки на CMS <a href="https://wordpress.org" target="_blank" rel="noreferrer">WordPress</a></li>
-								<li>Различные правки по верстке и JavaScript</li>
+								<li>Натяжка верстки на CMS <a href="https://wordpress.org" target="_blank" rel="noreferrer">WordPress</a></li>
+								<li>Різні правки по верстці та JavaScript</li>
 							</ul>
-							<h4>Я работаю с такими технологиями:</h4>
+							<h4>Я працюю з такими технологіями:</h4>
 							<ul>
 								<li>HTML/CSS, SASS/SCSS, Grid/Flexbox</li>
-								<li>Bootstrap 4</li>
+								<li>Bootstrap 4/5</li>
 								<li>Elementor, Tilda, Webflow, карта Leaflet</li>
 								<li>JavaScript, jQuery, Gsap</li>
 								<li>WordPress, GetCourse, Gatsby</li>
@@ -147,16 +147,16 @@ const IndexPage = () => {
 								</li>
 								<li>Adobe Photoshop, Pixelmator Pro, Figma, Squoosh</li>
 							</ul>
-							{/* <p>Моя почасовая ставка 5$. В зависимости от вида, объема и сложности работы, цена может изменятся.</p> */}
+							<p>Моя погодинна ставка 8-15 $. Залежно від виду, обсягу та складності роботи, ціна може змінюватись.</p>
 						</div>
 					</div>
 
-					{/* <ProjectsList title="Последние работы"  query={posts.projects} /> */}
+					{/* <ProjectsList title="Останні роботи"  query={posts.projects} /> */}
 
-					<PostList title="Последние работы" postType="projects" query={posts.projects} linkText="Все проекты" />
-					<PostList title="Последние заметки" postType="notes" query={posts.notes} linkText="Все заметки" />
+					<PostList title="Останні роботи" postType="projects" query={posts.projects} linkText="Всі проекти" />
+					<PostList title="Останні нотатки" postType="notes" query={posts.notes} linkText="Всі нотатки" />
 
-					{/* <NotesList title="Последние записи" query={posts.notes} /> */}
+					{/* <NotesList title="Останні записи" query={posts.notes} /> */}
 
 				</div>
 			</section>

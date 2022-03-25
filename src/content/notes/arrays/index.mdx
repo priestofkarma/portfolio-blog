@@ -1,37 +1,37 @@
 ---
-title: Массивы и псевдомассивы
-description: Мини гайд по массивам и псевдомассивам
+title: Масиви та псевдомасиви
+description: Міні гайд з масивів та псевдомасивів
 path: /notes/arrays
 date: 2021-07-20
 tags: ["JavaScript"]
 ---
 
-![Массивы и объекты](objects-arrays.jpg)
+![Масиви та об'єкти](objects-arrays.jpg)
 
-[Псевдомассивы и их конвертация в массив](https://habr.com/ru/post/336136/)
+[Псевдомасиви та їх конвертація в масив](https://habr.com/ru/post/336136/)
 
-### Методы массивов
+### Методи масивів
 
 ```jsx
 const arr = [2, 13, 26, 8, 10];
 
-// Удалить последний элемент массива
+// Видалити останній елемент масиву
 arr.pop();
 
-// Добавить элемент в конец массива
+// Додати елемент до кінця масиву
 arr.push(10);
 
-// Из строки сдлеать массив
+// З рядка зробити масив
 const str = "qqq, www, eee, rrr, ttt";
 const products = str.split(", ");
 
 console.log(products); // ["qqq", "www", "eee", "rrr", "ttt"]
 
-// Объеденить элементы массива в строку
+// Об'єднати елементи масиву в рядок
 console.log(products.join('; ')); "qqq; www; eee; rrr; ttt;"
 
-// Сортировка объекта
-// Этот метод сортирует строки (по алфавиту)
+// Сортування об'єкту
+// Цей метод сортує рядки (за алфавітом)
 products.sort();
 
 arr.sort(); // [10, 13, 2, 26, 8]
@@ -44,25 +44,26 @@ arr.sort(); // [2, 8, 10, 13, 26]
 
 ```
 
-### Особенность свойства length
+### Особливість якості length
 
 ```jsx
 const arr = [1, 2, 3, 6, 8];
 
 arr[99] = 0;
-// Свойство length состоит из последнего индекса + 1
+
+// Властивість length складається з останнього індексу + 1
 console.log(arr.length); // 100
 
 console.log(arr); // [1, 2, 3, 6, 8, <94 empty items>, 0]
 ```
 
-### Алгоритм быстрой сортировки
+### Алгоритм швидкого сортування
 
-[Быстрая сортировка](http://algolist.ru/sort/quick_sort.php)
+[Швидке сортування](http://algolist.ru/sort/quick_sort.php)
 
-### Перебор массивов
+### Перебір масивів
 
-В переборе forEach нельзя использовать break и continue
+У переборі forEach не можна використовувати break і continue
 
 ```jsx
 // Через цикл for
@@ -77,16 +78,16 @@ for (let value of arr) {
 
 // Через forEach
 arr.forEach(function(item, index, array) {
-	console.log(`${index}: ${item} внутри массива ${array]`);
+	console.log(`${index}: ${item} всередині масиву ${array]`);
 });
 ```
 
-### Отличие for in от for of
+### Відмінність for in від for of
 
-[Отличие for...of от for...in в javascript](http://coldfox.ru/article/5c7ffe64bbf20e61c12c7348/Отличие-for-of-от-for-in-в-javascript)
+[Відмінність for...of від for...in в javascript](http://coldfox.ru/article/5c7ffe64bbf20e61c12c7348/Отличие-for-of-от-for-in-в-javascript)
 
-### Псевдомассивы
+### Псевдомасиви
 
 Это структура, которая хранит данные по порядку
 
-[Немного о псевдомассивах (массивоподобных объектах или коллекциях). "Что это?", "Как с ними работать?" и прочее](https://habr.com/ru/post/336136/)
+[Трохи про псевдомасиви (масивоподібні об'єкти або колекції). "Що це?", "Як із ними працювати?" та інше](https://habr.com/ru/post/336136/)

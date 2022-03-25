@@ -16,7 +16,7 @@ const ProjectTags = ({ pageContext, data }) => {
 
   const pageData = {
     title: `Тег - ${tag}`,
-    description: `Записи с тегом - ${tag}`,
+    description: `Записи з тегом - ${tag}`,
   }
 
   return (
@@ -28,18 +28,18 @@ const ProjectTags = ({ pageContext, data }) => {
 
           {data.projects.totalCount !== 0 && (
             <PostList
-              title={`${data.projects.totalCount} ${declOfNum(data.projects.totalCount, ['проект', 'проекта', 'проектов'])} с тегом "${tag}"`}
+              title={`${data.projects.totalCount} ${declOfNum(data.projects.totalCount, ['проєкт', 'проєкта', 'проєктів'])} з тегом "${tag}"`}
               postType="projects"
               query={data.projects}
-              linkText="Все проекты"
+              linkText="Всі проєкти"
             />
           )}
           {data.notes.totalCount !== 0 && (
             <PostList
-              title={`${data.notes.totalCount} ${declOfNum(data.notes.totalCount, ['заметка', 'заметки', 'заметок'])} с тегом "${tag}"`}
+              title={`${data.notes.totalCount} ${declOfNum(data.notes.totalCount, ['нотатка', 'нотатки', 'нотаток'])} з тегом "${tag}"`}
               postType="notes"
               query={data.notes}
-              linkText="Все заметки"
+              linkText="Всі нотатки"
             />
           )}
         </div>

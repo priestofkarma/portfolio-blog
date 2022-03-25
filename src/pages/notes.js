@@ -42,14 +42,12 @@ const BlogPage = () => {
   const tags = posts.allMdx.group
 
   const pageData = {
-    title: "Заметочки и закладочки",
-    // title: "Головные мюсли 🧠",
-    description: "Мои зметочки и кое-что еще 🙃",
-    // description: "О чем-то пишу, о чем-то не пишу 🤷‍♂️",
+    title: "Нотатки і закладки",
+    description: "Мої нотатки і дещо ще 🙃",
   }
 
   return (
-    <Layout pageTitle="Заметочки" clazzName="notes">
+    <Layout pageTitle="Нотатки" clazzName="notes">
       <Seo pageTitle={pageData.title} pageDescription={pageData.description} />
       <PageIntro
         // bgColor="gradient-green"
@@ -60,7 +58,7 @@ const BlogPage = () => {
       <div className="blog-section">
         <div className="wrapper">
           <TagList query={tags} onTagChange={setTag}/>
-          <PostList postType="notes" tagNameFilter={tagName} query={posts.allMdx} linkText="Все заметки" />
+          <PostList postType="notes" tagNameFilter={tagName} query={posts.allMdx} linkText="Всі нотатки" />
 
         </div>
       </div>

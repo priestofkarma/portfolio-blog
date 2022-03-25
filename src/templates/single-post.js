@@ -46,7 +46,7 @@ const PageTemplate = ({ data: { mdx }, pageContext: { prev, next } }) => {
             <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </article>
-        <PrevNext prev={prev} next={next} postType="заметка" />
+        <PrevNext prev={prev} next={next} postType="нотатка" />
       </div>
 
     </Layout>

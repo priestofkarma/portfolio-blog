@@ -8,70 +8,69 @@ const _ = require("lodash")
 
 const Footer = () => {
 
-  const lstThree = useStaticQuery(lastThreePosts)
+	const lstThree = useStaticQuery(lastThreePosts)
+	const dt = new Date();
+	
+	return (
+		<footer className="footer">
+			<div className="wrapper">
+				<div className="footer-wrapper">
+					<div className="footer-menu">
 
-  return (
-    <footer className="footer">
-      <div className="wrapper">
-        <div className="footer-wrapper">
-          <div className="footer-menu">
+						<div className="footer-menu_item">
+							<Link to="/tags" className="first-link">Теги</Link>
+							<ul className="footer-menu_list">
+								{lstThree.allTagsMdx.group.map((tag, index) => (
+									<li key={tag + index}>
+										<Link to={`/tags/${_.kebabCase(tag.fieldValue)}/`} title={tag.fieldValue} >{tag.fieldValue}</Link>
+									</li>
+								))}
+							</ul>
+						</div>
 
-            <div className="footer-menu_item">
-              <Link to="/tags" className="first-link">Теги</Link>
-              <ul className="footer-menu_list">
-                {lstThree.allTagsMdx.group.map((tag, index) => (
-                  <li key={tag + index}>
-                    <Link to={`/tags/${_.kebabCase(tag.fieldValue)}/`} title={tag.fieldValue} >{tag.fieldValue}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+						<div className="footer-menu_item">
+							<Link to="/projects" className="first-link">Проєкти</Link>
+							<ul className="footer-menu_list">
+								{lstThree.allProjectsMdx.edges.map(({ node }) => (
+									<li key={node.id}>
+										<Link to={node.frontmatter.path} title={node.frontmatter.title} >{sliceString(node.frontmatter.name, 25)}</Link>
+									</li>
+								))}
+							</ul>
+						</div>
 
-            <div className="footer-menu_item">
-              <Link to="/projects" className="first-link">Проекты</Link>
-              <ul className="footer-menu_list">
-                {lstThree.allProjectsMdx.edges.map(({ node }) => (
-                  <li key={node.id}>
-                    <Link to={node.frontmatter.path} title={node.frontmatter.title} >{sliceString(node.frontmatter.name, 25)}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+						<div className="footer-menu_item">
+							<p className="first-link">Корисності</p>
+							<ul className="footer-menu_list">
+								<li>
+									<Link to="/notes/instruments" title="Чим я користуюсь">Інструменти</Link>
+								</li>
+								<li>
+									<AnchorLink to="/about#write-me" stripHash={true} title="Напишіть мені!">Зв'язатися зі мною</AnchorLink>
+								</li>
+							</ul>
+						</div>
 
-            <div className="footer-menu_item">
-              <p className="first-link">Полезности</p>
-              <ul className="footer-menu_list">
-                <li>
-                  <Link to="/notes/instruments" title="Чем я пользуюсь">Инструменты</Link>
-                </li>
-                <li>
-                  <AnchorLink to="/about#write-me" stripHash={true} title="Напишите мне!">Cвязаться со мной</AnchorLink>
-                </li>
-              </ul>
-            </div>
+						<div className="footer-menu_item">
+							<p className="first-link">Соц мережі</p>
+							<ul className="footer-menu_list">
+								{socialMenuItems.map((item, index) => (
+									<li key={`footerSocialItems-${index}`}><a href={item.url} target="_blank" rel="noreferrer" title={item.name}>{item.name}</a></li>
+								))}
+							</ul>
+						</div>
+					</div>
 
-            <div className="footer-menu_item">
-              <p className="first-link">Соцсети</p>
-              <ul className="footer-menu_list">
-                {socialMenuItems.map((item, index) => (
-                  <li key={`footerSocialItems-${index}`}><a href={item.url} target="_blank" rel="noreferrer" title={item.name}>{item.name}</a></li>
-                ))}
-              </ul>
-            </div>
-          </div>
+					<div className="footer-copyright">
+						<span>© {dt.getFullYear()} by <a href="https://t.me/priestofkarma" target="_blank" rel="noreferrer">Zhenya Petrenko</a> Всі права захищені.</span>
+						<p>В даний час доступний для найму, не соромтеся зв'язатися зі мною, щоб обговорити деталі вашого проекту.</p>
+					</div>
 
-          <div className="footer-copyright">
-            <span>© 2021 by <a href="https://t.me/priestofkarma" target="_blank" rel="noreferrer">Zhenya Petrenko</a> Все права защищены.</span>
-            <p>В настоящее время доступен для найма, не стесняйтесь связаться со мной, чтобы обсудить
-              детали
-              Вашего проекта.</p>
-          </div>
+				</div>
+			</div>
+		</footer>
 
-        </div>
-      </div>
-    </footer>
-
-  )
+	)
 
 }
 
