@@ -201,13 +201,13 @@
       transform: translate(0, -8%);
     }
   }
-  &:active {
+/*   &:active {
     transform: scale(0.98);
     g {
       transform: none !important;
       transition: 0.1s;
     }
-  }
+  } */
 }
 
 @media only screen and (max-width: 576px) {

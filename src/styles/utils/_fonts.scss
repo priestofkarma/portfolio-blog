@@ -1,11 +1,18 @@
 @import "font-face";
-@include font-face("Merriweather", "Merriweather Regular", "Merriweather-Regular", "../fonts/Merriweather/Merriweather-Regular", 400);
-@include font-face("Merriweather", "Merriweather Bold", "Merriweather-Bold", "../fonts/Merriweather/Merriweather-Bold", 700);
-@include font-face("Merriweather", "Merriweather Black", "Merriweather-Black", "../fonts/Merriweather/Merriweather-Black", 900);
-@include font-face("OpenSans", "OpenSans Light", "OpenSans-Light", "../fonts/OpenSans/OpenSans-Light", 300);
-@include font-face("OpenSans", "OpenSans Regular", "OpenSans-Regular", "../fonts/OpenSans/OpenSans-Regular", 400);
-@include font-face("OpenSans", "OpenSans SemiBold", "OpenSans-SemiBold", "../fonts/OpenSans/OpenSans-SemiBold", 600);
-@include font-face("OpenSans", "OpenSans Bold", "OpenSans-Bold", "../fonts/OpenSans/OpenSans-Bold", 700);
-@include font-face("SourceCodePro", "SourceCodePro Light", "SourceCodePro-Light", "../fonts/SourceCodePro/SourceCodePro-Light", 300);
-@include font-face("SourceCodePro", "SourceCodePro Regular", "SourceCodePro-Regular", "../fonts/SourceCodePro/SourceCodePro-Regular", 400);
+// @include font-face("Merriweather", "Merriweather Regular", "Merriweather-Regular", "../../../fonts/Merriweather/Merriweather-Regular", 400);
+// @include font-face("Merriweather", "Merriweather Bold", "Merriweather-Bold", "../../fonts/Merriweather/Merriweather-Bold", 700);
+// @include font-face("Merriweather", "Merriweather Black", "Merriweather-Black", "../../fonts/Merriweather/Merriweather-Black", 900);
+// @include font-face("OpenSans", "OpenSans Light", "OpenSans-Light", "../../fonts/OpenSans/OpenSans-Light", 300);
+// @include font-face("OpenSans", "OpenSans Regular", "OpenSans-Regular", "../../fonts/OpenSans/OpenSans-Regular", 400);
+// @include font-face("OpenSans", "OpenSans SemiBold", "OpenSans-SemiBold", "../../fonts/OpenSans/OpenSans-SemiBold", 600);
+// @include font-face("OpenSans", "OpenSans Bold", "OpenSans-Bold", "../../fonts/OpenSans/OpenSans-Bold", 700);
+// @include font-face("SourceCodePro", "SourceCodePro Light", "SourceCodePro-Light", "../../fonts/SourceCodePro/SourceCodePro-Light", 300);
+// @include font-face("SourceCodePro", "SourceCodePro Regular", "SourceCodePro-Regular", "../../fonts/SourceCodePro/SourceCodePro-Regular", 400);
+@include font-face("e-Ukraine", "e-Ukraine Thin", "e-Ukraine-Thin", "../fonts/e-Ukraine/e-Ukraine-Thin", 200);
+@include font-face("e-Ukraine", "e-Ukraine Light", "e-Ukraine-Light", "../fonts/e-Ukraine/e-Ukraine-Light", 300);
+@include font-face("e-Ukraine", "e-Ukraine Regular", "e-Ukraine-Regular", "../fonts/e-Ukraine/e-Ukraine-Regular", 400);
+@include font-face("e-Ukraine", "e-Ukraine Medium", "e-Ukraine-Medium", "../fonts/e-Ukraine/e-Ukraine-Medium", 500);
+@include font-face("e-Ukraine", "e-Ukraine Bold", "e-Ukraine-Bold", "../fonts/e-Ukraine/e-Ukraine-Bold", 700);
+@include font-face("e-UkraineHead", "e-UkraineHead Bold", "e-UkraineHead-Bold", "../fonts/e-Ukraine/e-UkraineHead-Bold", 700);
+@include font-face("e-UkraineHead", "e-UkraineHead Medium", "e-UkraineHead-Medium", "../fonts/e-Ukraine/e-UkraineHead-Medium", 700);
 
