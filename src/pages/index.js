@@ -85,7 +85,7 @@ const IndexPage = () => {
 
 				<div className="wrapper">
 					<div className="hero-section_wrapper">
-						<h1 className="hero-title">Привіт, я Женя <span>👋</span>🇺🇦</h1>
+						<h1 className="hero-title"><span>👋</span> Привіт, я Женя 🇺🇦 </h1>
 						<div className="hero-description">
 							<p><strong>Веб-розробник,</strong>дизайнер-початківець зазвичай працюю в аутсорсі. 
 								{/* <strong> Роблю добротні сайти</strong> и натягиваю на <b>Wordpress :)</b> */}
@@ -114,7 +114,7 @@ const IndexPage = () => {
 							/>
 							<ul className="soc-links">
 								{socialMenuItems && socialMenuItems.map((item, index) => (
-									<li key={`socialitems-${index}`}><a href={item.url} target="_blank" rel="noreferrer">{item.icon}</a></li>
+									<li key={`socialitems-${index}`}><a href={item.url} aria-label={item.name} target="_blank" rel="noreferrer">{item.icon}</a></li>
 								))}
 							</ul>
 						</div>

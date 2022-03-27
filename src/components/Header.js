@@ -13,7 +13,7 @@ const Header = () => {
     <header className="header">
       <div className="wrapper">
         <div className="header-wrapper fadeInDown">
-          <a href="/" className="logotype">
+		  <a href="/" className="logotype" aria-label="webofkarma">
 
             <svg enableBackground="new 0 0 512 512" overflow="visible" height="100" width="100" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
               <g className="mini-left">
@@ -48,6 +48,7 @@ const Header = () => {
           <button
             className={`menu-toggle ${isOpen ? "toggle-active" : ""}`}
             onClick={toggleNav}
+			ariaLabel={`${isOpen ? "Закрити меню" : "Відкрити меню"}`}
           >
             <div className="menu-toggle-icon"><span></span></div>
           </button>
