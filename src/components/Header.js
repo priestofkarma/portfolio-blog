@@ -48,7 +48,7 @@ const Header = () => {
           <button
             className={`menu-toggle ${isOpen ? "toggle-active" : ""}`}
             onClick={toggleNav}
-			ariaLabel={`${isOpen ? "Закрити меню" : "Відкрити меню"}`}
+			aria-label={`${isOpen ? "Закрити меню" : "Відкрити меню"}`}
           >
             <div className="menu-toggle-icon"><span></span></div>
           </button>

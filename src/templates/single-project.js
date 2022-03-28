@@ -7,6 +7,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PrevNext from "../components/PrevNext"
 import InfoMd from "../components/shortcodes/InfoMd"
+import Video from "../components/shortcodes/Video"
 
 export const pageQuery = graphql`
   query singleProjectQuery($id: String) {
@@ -33,7 +34,7 @@ export const pageQuery = graphql`
   }
 `
 
-const shortcodes = { Link, InfoMd }
+const shortcodes = { Link, InfoMd, Video }
 
 export default function PageTemplate({ data: { mdx }, pageContext: { prev, next } }) {
 
