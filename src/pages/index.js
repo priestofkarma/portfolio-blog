@@ -85,7 +85,7 @@ const IndexPage = () => {
 
 				<div className="wrapper">
 					<div className="hero-section_wrapper">
-						<h1 className="hero-title"><span>👋</span> Привіт, я Женя 🇺🇦 </h1>
+						<h1 className="hero-title"><span>👋</span> Привіт, я Женя <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" style={{width: '0.8em', height: '0.8em'}}><path fill="#005BBB" d="M32 5H4C1.791 5 0 6.791 0 9v9h36V9c0-2.209-1.791-4-4-4z" /><path fill="#FFD500" d="M36 27c0 2.209-1.791 4-4 4H4c-2.209 0-4-1.791-4-4v-9h36v9z" /></svg> </h1>
 						<div className="hero-description">
 							<p><strong>Веб-розробник,</strong> дизайнер-початківець зазвичай працюю в аутсорсі. 
 								{/* <strong> Роблю добротні сайти</strong> и натягиваю на <b>Wordpress :)</b> */}

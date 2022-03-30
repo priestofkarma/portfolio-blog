@@ -10,7 +10,7 @@ const ContactForm = () => {
 
 	return (
 		<>
-			<h2 id="write-me">Напишіть мне ✌️</h2>
+			<h2 id="write-me">Напишіть мені ✌️</h2>
 			<form id="get-in-touch" className="contact-form" onSubmit={handleSubmit}>
 				<div className="contact-grid">
 					<fieldset>

@@ -49,13 +49,24 @@
 }
 
 .logotype {
-	display: block;
+	display: flex;
 	color: #000;
 	position: absolute;
 	left: 0;
 	width: 45px;
 	padding: 0;
-
+	position: relative;
+	span {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 1.4em;
+		opacity: 0;
+		z-index: -1;
+		transition: opacity 0.25s ease-in-out, color 0s ease;
+	}
 	svg {
 		overflow: visible;
 		display: block;
@@ -69,8 +80,16 @@
 	}
 	&:hover {
 		transform: scale(1.02);
+		span {
+			opacity: 1;
+			color: #000;
+		}
+		.middle {
+			opacity: 0;
+		}
 	}
 }
+
 .header-wrapper {
 	position: relative;
 	height: var(--header-height);
@@ -210,10 +229,18 @@
   } */
 }
 
+@media only screen and (max-width: 1023px) {
+	.logotype {
+		span, g {
+			transition: 0s ease;
+		}
+	}
+}
 @media only screen and (max-width: 576px) {
 	.header {
 		font-size: 1.2rem;
 	}
+	
 	.menu-toggle {
 		display: -webkit-box;
 		display: -ms-flexbox;

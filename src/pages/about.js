@@ -35,7 +35,7 @@ const AboutPage = () => {
 						</p>
 						<p>
 							Знайомий з Wordpress, можу робити редагування, доповнення та натягувати сторінки на цю CMS. <br />
-							Знаковий проект на Wordpress - <Link to="/projects/autolife">Autolife UA - Автомобілі з Європи/Кореї</Link>
+							Знаковий проєкт на Wordpress - <Link to="/projects/autolife">Autolife UA - Автомобілі з Європи/Кореї</Link>
 						</p>
 						<p>
 							Інтегрував верстку у GetCourse.
@@ -44,7 +44,7 @@ const AboutPage = () => {
 							Пишу анімації на CSS3 для прелоадерів сайтів та різних частин інтерфейсу.
 						</p>
 
-						<p>Приклади робіт можна переглянути на сторінці <Link to="/projects">проекти</Link>.
+						<p>Приклади робіт можна переглянути на сторінці <Link to="/projects">проєкти</Link>.
 							Завжди намагаюся максимально ідеально виконати роботу. <a href="https://drive.google.com/file/d/1JNPoiQe5T7ulkb-RJo711kLRPKa4i3rU/view?usp=sharing" target="_blank" rel="noreferrer">Ознайомитись з резюме</a></p>
 					</div>
 					<ContactForm />

@@ -14,7 +14,7 @@ const Header = () => {
       <div className="wrapper">
         <div className="header-wrapper fadeInDown">
 		  <a href="/" className="logotype" aria-label="webofkarma">
-
+			<span>&lt;тризуб&gt;</span>
             <svg enableBackground="new 0 0 512 512" overflow="visible" height="100" width="100" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
               <g className="mini-left">
                 <path d="m152.842 208.741 35.491-31.331 28.244-47.565c-45.401-34.461-96.383-56.454-98.53-57.373l-12.937-5.537-6.352 12.557c-1.078 2.133-26.575 52.908-39.04 109.272z" fill="#023E7D" />
